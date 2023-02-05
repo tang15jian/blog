@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go中的文件和目录操作 | Tang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/TB5.PNG">
+    <meta name="description" content="This is a blog.">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.389ed919.css" as="style"><link rel="preload" href="/blog/assets/js/app.96a63ad2.js" as="script"><link rel="preload" href="/blog/assets/js/2.e671b9b2.js" as="script"><link rel="preload" href="/blog/assets/js/3.be9bea65.js" as="script"><link rel="preload" href="/blog/assets/js/87.4c47bbc2.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6769ccf0.js"><link rel="prefetch" href="/blog/assets/js/11.46df150a.js"><link rel="prefetch" href="/blog/assets/js/12.e78943d6.js"><link rel="prefetch" href="/blog/assets/js/13.5d361c1d.js"><link rel="prefetch" href="/blog/assets/js/14.13534fd9.js"><link rel="prefetch" href="/blog/assets/js/15.b21fe2e3.js"><link rel="prefetch" href="/blog/assets/js/16.bf5062c1.js"><link rel="prefetch" href="/blog/assets/js/17.65346b85.js"><link rel="prefetch" href="/blog/assets/js/18.6fb1bdc2.js"><link rel="prefetch" href="/blog/assets/js/19.c6e110df.js"><link rel="prefetch" href="/blog/assets/js/20.4a33f06a.js"><link rel="prefetch" href="/blog/assets/js/21.28170e84.js"><link rel="prefetch" href="/blog/assets/js/22.9358a818.js"><link rel="prefetch" href="/blog/assets/js/23.136a0f54.js"><link rel="prefetch" href="/blog/assets/js/24.499aeaaf.js"><link rel="prefetch" href="/blog/assets/js/25.3cff72a1.js"><link rel="prefetch" href="/blog/assets/js/26.4ee8c52f.js"><link rel="prefetch" href="/blog/assets/js/27.6e099c82.js"><link rel="prefetch" href="/blog/assets/js/28.bfc3427b.js"><link rel="prefetch" href="/blog/assets/js/29.ce801df4.js"><link rel="prefetch" href="/blog/assets/js/30.724cfbb6.js"><link rel="prefetch" href="/blog/assets/js/31.ffd0a663.js"><link rel="prefetch" href="/blog/assets/js/32.feba734b.js"><link rel="prefetch" href="/blog/assets/js/33.e8d22227.js"><link rel="prefetch" href="/blog/assets/js/34.a12f435a.js"><link rel="prefetch" href="/blog/assets/js/35.31d4b272.js"><link rel="prefetch" href="/blog/assets/js/36.a6d04eab.js"><link rel="prefetch" href="/blog/assets/js/37.d8aae5c8.js"><link rel="prefetch" href="/blog/assets/js/38.2d9e0b46.js"><link rel="prefetch" href="/blog/assets/js/39.f9bd73de.js"><link rel="prefetch" href="/blog/assets/js/4.850a33ae.js"><link rel="prefetch" href="/blog/assets/js/40.5ef065c5.js"><link rel="prefetch" href="/blog/assets/js/41.014df883.js"><link rel="prefetch" href="/blog/assets/js/42.199ac029.js"><link rel="prefetch" href="/blog/assets/js/43.69e01de9.js"><link rel="prefetch" href="/blog/assets/js/44.b00eed2f.js"><link rel="prefetch" href="/blog/assets/js/45.f676a314.js"><link rel="prefetch" href="/blog/assets/js/46.d76b7b8a.js"><link rel="prefetch" href="/blog/assets/js/47.fa6622ba.js"><link rel="prefetch" href="/blog/assets/js/48.629ae724.js"><link rel="prefetch" href="/blog/assets/js/49.3f36b8cf.js"><link rel="prefetch" href="/blog/assets/js/5.c1ab3a44.js"><link rel="prefetch" href="/blog/assets/js/50.6429bdc0.js"><link rel="prefetch" href="/blog/assets/js/51.b7cb8687.js"><link rel="prefetch" href="/blog/assets/js/52.7360a167.js"><link rel="prefetch" href="/blog/assets/js/53.fb5fcabb.js"><link rel="prefetch" href="/blog/assets/js/54.f5ac5958.js"><link rel="prefetch" href="/blog/assets/js/55.592b0348.js"><link rel="prefetch" href="/blog/assets/js/56.d17f3acb.js"><link rel="prefetch" href="/blog/assets/js/57.11aeb3ed.js"><link rel="prefetch" href="/blog/assets/js/58.1b2f9f8b.js"><link rel="prefetch" href="/blog/assets/js/59.c5633b7a.js"><link rel="prefetch" href="/blog/assets/js/6.0106dfd1.js"><link rel="prefetch" href="/blog/assets/js/60.230b2314.js"><link rel="prefetch" href="/blog/assets/js/61.f9cb1ad6.js"><link rel="prefetch" href="/blog/assets/js/62.92f2597d.js"><link rel="prefetch" href="/blog/assets/js/63.25fe8e93.js"><link rel="prefetch" href="/blog/assets/js/64.08acc4bc.js"><link rel="prefetch" href="/blog/assets/js/65.cba08f56.js"><link rel="prefetch" href="/blog/assets/js/66.2aff3910.js"><link rel="prefetch" href="/blog/assets/js/67.23dfb624.js"><link rel="prefetch" href="/blog/assets/js/68.7e1a9696.js"><link rel="prefetch" href="/blog/assets/js/69.127d4ccb.js"><link rel="prefetch" href="/blog/assets/js/7.34cfb431.js"><link rel="prefetch" href="/blog/assets/js/70.cb7a9ca8.js"><link rel="prefetch" href="/blog/assets/js/71.fc5012c0.js"><link rel="prefetch" href="/blog/assets/js/72.04308961.js"><link rel="prefetch" href="/blog/assets/js/73.3b80efd9.js"><link rel="prefetch" href="/blog/assets/js/74.009897a1.js"><link rel="prefetch" href="/blog/assets/js/75.00bb0c95.js"><link rel="prefetch" href="/blog/assets/js/76.0b9619cc.js"><link rel="prefetch" href="/blog/assets/js/77.3cdf8f24.js"><link rel="prefetch" href="/blog/assets/js/78.2db1c727.js"><link rel="prefetch" href="/blog/assets/js/79.342c3faa.js"><link rel="prefetch" href="/blog/assets/js/8.51e80c5b.js"><link rel="prefetch" href="/blog/assets/js/80.0439653b.js"><link rel="prefetch" href="/blog/assets/js/81.6c0e9802.js"><link rel="prefetch" href="/blog/assets/js/82.e6e1608a.js"><link rel="prefetch" href="/blog/assets/js/83.39a82281.js"><link rel="prefetch" href="/blog/assets/js/84.4415141b.js"><link rel="prefetch" href="/blog/assets/js/85.00b63f10.js"><link rel="prefetch" href="/blog/assets/js/86.1581db60.js"><link rel="prefetch" href="/blog/assets/js/88.10af48c1.js"><link rel="prefetch" href="/blog/assets/js/89.84840655.js"><link rel="prefetch" href="/blog/assets/js/9.c76e1545.js"><link rel="prefetch" href="/blog/assets/js/90.574990da.js"><link rel="prefetch" href="/blog/assets/js/91.a1094788.js"><link rel="prefetch" href="/blog/assets/js/92.7070acb6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.389ed919.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/TB5.PNG" alt="Tang's Blog" class="logo"> <span class="site-name can-hide">Tang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link router-link-active">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link router-link-active">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Go Lang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/newlanguage/go/go1.html" class="sidebar-link">Go语言简介</a></li><li><a href="/blog/newlanguage/go/go2.html" class="sidebar-link">数据类型</a></li><li><a href="/blog/newlanguage/go/go3.html" class="sidebar-link">其他类型</a></li><li><a href="/blog/newlanguage/go/go4.html" class="sidebar-link">Go 流程控制</a></li><li><a href="/blog/newlanguage/go/go5.html" class="sidebar-link">Go中的包</a></li><li><a href="/blog/newlanguage/go/go6.html" class="sidebar-link">Go中的日期函数</a></li><li><a href="/blog/newlanguage/go/go7.html" aria-current="page" class="active sidebar-link">Go中的文件和目录操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#文件的读取" class="sidebar-link">文件的读取</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#通过os-open方法读取文件" class="sidebar-link">通过os.Open方法读取文件</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#通过bufio的方式读取" class="sidebar-link">通过bufio的方式读取</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#通过ioutil读取" class="sidebar-link">通过ioutil读取</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#文件的写入" class="sidebar-link">文件的写入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#通过openfile打开文件写入" class="sidebar-link">通过OpenFile打开文件写入</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#通过bufio写入" class="sidebar-link">通过bufio写入</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#通过ioutil写入" class="sidebar-link">通过ioutil写入</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#文件复制" class="sidebar-link">文件复制</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#创建目录" class="sidebar-link">创建目录</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#删除操作" class="sidebar-link">删除操作</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go7.html#重命名" class="sidebar-link">重命名</a></li></ul></li><li><a href="/blog/newlanguage/go/go8.html" class="sidebar-link">Golang goroutine channel 实现并发和并行</a></li><li><a href="/blog/newlanguage/go/go9.html" class="sidebar-link">Go中的反射</a></li><li><a href="/blog/newlanguage/go/go10.html" class="sidebar-link">互联网协议</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="go中的文件和目录操作"><a href="#go中的文件和目录操作" class="header-anchor">#</a> Go中的文件和目录操作</h1> <h2 id="文件的读取"><a href="#文件的读取" class="header-anchor">#</a> 文件的读取</h2> <h3 id="通过os-open方法读取文件"><a href="#通过os-open方法读取文件" class="header-anchor">#</a> 通过os.Open方法读取文件</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 读取文件 方法1</span>
+	file<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">)</span>
+	<span class="token comment">// 关闭文件流</span>
+	<span class="token keyword">defer</span> file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;打开文件出错&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 读取文件里面的内容</span>
+	<span class="token keyword">var</span> tempSlice <span class="token operator">=</span> <span class="token function">make</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span><span class="token punctuation">,</span> <span class="token number">1024</span><span class="token punctuation">)</span>
+	<span class="token keyword">var</span> strSlice <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">byte</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		n<span class="token punctuation">,</span> err <span class="token operator">:=</span> file<span class="token punctuation">.</span><span class="token function">Read</span><span class="token punctuation">(</span>tempSlice<span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">==</span> io<span class="token punctuation">.</span>EOF <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;读取完毕&quot;</span><span class="token punctuation">)</span>
+			<span class="token keyword">break</span>
+		<span class="token punctuation">}</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;读取到了%v 个字节 \n&quot;</span><span class="token punctuation">,</span> n<span class="token punctuation">)</span>
+		strSlice <span class="token operator">:=</span> <span class="token function">append</span><span class="token punctuation">(</span>strSlice<span class="token punctuation">,</span> tempSlice<span class="token operator">...</span><span class="token punctuation">)</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>strSlice<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="通过bufio的方式读取"><a href="#通过bufio的方式读取" class="header-anchor">#</a> 通过bufio的方式读取</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 读取文件 方法2</span>
+	file<span class="token punctuation">,</span> err <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">Open</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">)</span>
+	<span class="token comment">// 关闭文件流</span>
+	<span class="token keyword">defer</span> file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;打开文件出错&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token comment">// 通过创建bufio来读取</span>
+	reader <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewReader</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span>
+	<span class="token keyword">var</span> fileStr <span class="token builtin">string</span>
+	<span class="token keyword">var</span> count <span class="token builtin">int</span> <span class="token operator">=</span> <span class="token number">0</span>
+	<span class="token keyword">for</span> <span class="token punctuation">{</span>
+		<span class="token comment">// 相当于读取一行</span>
+		str<span class="token punctuation">,</span> err <span class="token operator">:=</span> reader<span class="token punctuation">.</span><span class="token function">ReadString</span><span class="token punctuation">(</span><span class="token string">'\n'</span><span class="token punctuation">)</span>
+		<span class="token keyword">if</span> err <span class="token operator">==</span> io<span class="token punctuation">.</span>EOF <span class="token punctuation">{</span>
+			<span class="token comment">// 读取完成的时候，也会有内容</span>
+			fileStr <span class="token operator">+=</span> str
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;读取结束&quot;</span><span class="token punctuation">,</span> count<span class="token punctuation">)</span>
+			<span class="token keyword">break</span>
+		<span class="token punctuation">}</span>
+		<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+			fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+			<span class="token keyword">break</span>
+		<span class="token punctuation">}</span>
+		count <span class="token operator">++</span>
+		fileStr <span class="token operator">+=</span> str
+	<span class="token punctuation">}</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>fileStr<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="通过ioutil读取"><a href="#通过ioutil读取" class="header-anchor">#</a> 通过ioutil读取</h3> <p>文件比较少的时候，可以通过ioutil来读取文件</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 通过IOUtil读取</span>
+byteStr<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">)</span>
+fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token function">string</span><span class="token punctuation">(</span>byteStr<span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="文件的写入"><a href="#文件的写入" class="header-anchor">#</a> 文件的写入</h2> <p>文件的写入，我们首先需要通过 os.OpenFile打开文件</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 打开文件</span>
+file<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">OpenFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>O_CREATE <span class="token operator">|</span> os<span class="token punctuation">.</span>O_RDWR<span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">)</span>
+</code></pre></div><p>这里有三个参数</p> <ul><li>name：要打开的文件名</li> <li>flag：打开文件的模式
+<ul><li>os.O_WRONLY：只读</li> <li>os.O_CREATE：创建</li> <li>os.O_RDONLY：只读</li> <li>os.O_RDWR：读写</li> <li>os.O_TRUNC：清空</li> <li>os.O_APPEND：追加</li></ul></li> <li>perm：文件权限，一个八进制数，r（读）04，w（写）02，x（执行）01</li></ul> <h3 id="通过openfile打开文件写入"><a href="#通过openfile打开文件写入" class="header-anchor">#</a> 通过OpenFile打开文件写入</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 打开文件</span>
+file<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">OpenFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>O_CREATE <span class="token operator">|</span> os<span class="token punctuation">.</span>O_RDWR <span class="token operator">|</span> os<span class="token punctuation">.</span>O_APPEND<span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">)</span>
+<span class="token keyword">defer</span> file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+str <span class="token operator">:=</span> <span class="token string">&quot;啦啦啦 \r\n&quot;</span>
+file<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+</code></pre></div><h3 id="通过bufio写入"><a href="#通过bufio写入" class="header-anchor">#</a> 通过bufio写入</h3> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 打开文件</span>
+file<span class="token punctuation">,</span> <span class="token boolean">_</span> <span class="token operator">:=</span> os<span class="token punctuation">.</span><span class="token function">OpenFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>O_CREATE <span class="token operator">|</span> os<span class="token punctuation">.</span>O_RDWR <span class="token operator">|</span> os<span class="token punctuation">.</span>O_APPEND<span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">)</span>
+<span class="token keyword">defer</span> file<span class="token punctuation">.</span><span class="token function">Close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+str <span class="token operator">:=</span> <span class="token string">&quot;啦啦啦 \r\n&quot;</span>
+file<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+
+<span class="token comment">// 通过bufio写入</span>
+writer <span class="token operator">:=</span> bufio<span class="token punctuation">.</span><span class="token function">NewWriter</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span>
+<span class="token comment">// 先将数据写入缓存</span>
+writer<span class="token punctuation">.</span><span class="token function">WriteString</span><span class="token punctuation">(</span><span class="token string">&quot;你好，我是通过writer写入的 \r\n&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">// 将缓存中的内容写入文件</span>
+writer<span class="token punctuation">.</span><span class="token function">Flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span>	
+</code></pre></div><h2 id="通过ioutil写入"><a href="#通过ioutil写入" class="header-anchor">#</a> 通过ioutil写入</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 第三种方式，通过ioutil</span>
+str2 <span class="token operator">:=</span> <span class="token string">&quot;hello&quot;</span>
+ioutil<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span>str2<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="文件复制"><a href="#文件复制" class="header-anchor">#</a> 文件复制</h2> <p>通过ioutil读取和复制文件</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 读取文件</span>
+byteStr<span class="token punctuation">,</span> err <span class="token operator">:=</span> ioutil<span class="token punctuation">.</span><span class="token function">ReadFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test.txt&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;读取文件出错&quot;</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 写入指定的文件</span>
+ioutil<span class="token punctuation">.</span><span class="token function">WriteFile</span><span class="token punctuation">(</span><span class="token string">&quot;./main/test2.txt&quot;</span><span class="token punctuation">,</span> byteStr<span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="创建目录"><a href="#创建目录" class="header-anchor">#</a> 创建目录</h2> <div class="language-go extra-class"><pre class="language-go"><code>os<span class="token punctuation">.</span><span class="token function">Mkdir</span><span class="token punctuation">(</span><span class="token string">&quot;./abc&quot;</span><span class="token punctuation">,</span> <span class="token number">777</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="删除操作"><a href="#删除操作" class="header-anchor">#</a> 删除操作</h2> <div class="language-go extra-class"><pre class="language-go"><code><span class="token comment">// 删除文件</span>
+os<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token string">&quot;aaa.txt&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">// 删除目录</span>
+os<span class="token punctuation">.</span><span class="token function">Remove</span><span class="token punctuation">(</span><span class="token string">&quot;./aaa&quot;</span><span class="token punctuation">)</span>
+<span class="token comment">// 删除多个文件和目录</span>
+os<span class="token punctuation">.</span><span class="token function">RemoveAll</span><span class="token punctuation">(</span><span class="token string">&quot;./aaa&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><h2 id="重命名"><a href="#重命名" class="header-anchor">#</a> 重命名</h2> <div class="language-go extra-class"><pre class="language-go"><code>os<span class="token punctuation">.</span><span class="token function">Rename</span><span class="token punctuation">(</span><span class="token string">&quot;&quot;</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/newlanguage/go/go6.html" class="prev">
+        Go中的日期函数
+      </a></span> <span class="next"><a href="/blog/newlanguage/go/go8.html">
+        Golang goroutine channel 实现并发和并行
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.96a63ad2.js" defer></script><script src="/blog/assets/js/2.e671b9b2.js" defer></script><script src="/blog/assets/js/3.be9bea65.js" defer></script><script src="/blog/assets/js/87.4c47bbc2.js" defer></script>
+  </body>
+</html>

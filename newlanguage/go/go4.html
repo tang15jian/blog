@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go 流程控制 | Tang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/TB5.PNG">
+    <meta name="description" content="This is a blog.">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.389ed919.css" as="style"><link rel="preload" href="/blog/assets/js/app.96a63ad2.js" as="script"><link rel="preload" href="/blog/assets/js/2.e671b9b2.js" as="script"><link rel="preload" href="/blog/assets/js/3.be9bea65.js" as="script"><link rel="preload" href="/blog/assets/js/84.4415141b.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6769ccf0.js"><link rel="prefetch" href="/blog/assets/js/11.46df150a.js"><link rel="prefetch" href="/blog/assets/js/12.e78943d6.js"><link rel="prefetch" href="/blog/assets/js/13.5d361c1d.js"><link rel="prefetch" href="/blog/assets/js/14.13534fd9.js"><link rel="prefetch" href="/blog/assets/js/15.b21fe2e3.js"><link rel="prefetch" href="/blog/assets/js/16.bf5062c1.js"><link rel="prefetch" href="/blog/assets/js/17.65346b85.js"><link rel="prefetch" href="/blog/assets/js/18.6fb1bdc2.js"><link rel="prefetch" href="/blog/assets/js/19.c6e110df.js"><link rel="prefetch" href="/blog/assets/js/20.4a33f06a.js"><link rel="prefetch" href="/blog/assets/js/21.28170e84.js"><link rel="prefetch" href="/blog/assets/js/22.9358a818.js"><link rel="prefetch" href="/blog/assets/js/23.136a0f54.js"><link rel="prefetch" href="/blog/assets/js/24.499aeaaf.js"><link rel="prefetch" href="/blog/assets/js/25.3cff72a1.js"><link rel="prefetch" href="/blog/assets/js/26.4ee8c52f.js"><link rel="prefetch" href="/blog/assets/js/27.6e099c82.js"><link rel="prefetch" href="/blog/assets/js/28.bfc3427b.js"><link rel="prefetch" href="/blog/assets/js/29.ce801df4.js"><link rel="prefetch" href="/blog/assets/js/30.724cfbb6.js"><link rel="prefetch" href="/blog/assets/js/31.ffd0a663.js"><link rel="prefetch" href="/blog/assets/js/32.feba734b.js"><link rel="prefetch" href="/blog/assets/js/33.e8d22227.js"><link rel="prefetch" href="/blog/assets/js/34.a12f435a.js"><link rel="prefetch" href="/blog/assets/js/35.31d4b272.js"><link rel="prefetch" href="/blog/assets/js/36.a6d04eab.js"><link rel="prefetch" href="/blog/assets/js/37.d8aae5c8.js"><link rel="prefetch" href="/blog/assets/js/38.2d9e0b46.js"><link rel="prefetch" href="/blog/assets/js/39.f9bd73de.js"><link rel="prefetch" href="/blog/assets/js/4.850a33ae.js"><link rel="prefetch" href="/blog/assets/js/40.5ef065c5.js"><link rel="prefetch" href="/blog/assets/js/41.014df883.js"><link rel="prefetch" href="/blog/assets/js/42.199ac029.js"><link rel="prefetch" href="/blog/assets/js/43.69e01de9.js"><link rel="prefetch" href="/blog/assets/js/44.b00eed2f.js"><link rel="prefetch" href="/blog/assets/js/45.f676a314.js"><link rel="prefetch" href="/blog/assets/js/46.d76b7b8a.js"><link rel="prefetch" href="/blog/assets/js/47.fa6622ba.js"><link rel="prefetch" href="/blog/assets/js/48.629ae724.js"><link rel="prefetch" href="/blog/assets/js/49.3f36b8cf.js"><link rel="prefetch" href="/blog/assets/js/5.c1ab3a44.js"><link rel="prefetch" href="/blog/assets/js/50.6429bdc0.js"><link rel="prefetch" href="/blog/assets/js/51.b7cb8687.js"><link rel="prefetch" href="/blog/assets/js/52.7360a167.js"><link rel="prefetch" href="/blog/assets/js/53.fb5fcabb.js"><link rel="prefetch" href="/blog/assets/js/54.f5ac5958.js"><link rel="prefetch" href="/blog/assets/js/55.592b0348.js"><link rel="prefetch" href="/blog/assets/js/56.d17f3acb.js"><link rel="prefetch" href="/blog/assets/js/57.11aeb3ed.js"><link rel="prefetch" href="/blog/assets/js/58.1b2f9f8b.js"><link rel="prefetch" href="/blog/assets/js/59.c5633b7a.js"><link rel="prefetch" href="/blog/assets/js/6.0106dfd1.js"><link rel="prefetch" href="/blog/assets/js/60.230b2314.js"><link rel="prefetch" href="/blog/assets/js/61.f9cb1ad6.js"><link rel="prefetch" href="/blog/assets/js/62.92f2597d.js"><link rel="prefetch" href="/blog/assets/js/63.25fe8e93.js"><link rel="prefetch" href="/blog/assets/js/64.08acc4bc.js"><link rel="prefetch" href="/blog/assets/js/65.cba08f56.js"><link rel="prefetch" href="/blog/assets/js/66.2aff3910.js"><link rel="prefetch" href="/blog/assets/js/67.23dfb624.js"><link rel="prefetch" href="/blog/assets/js/68.7e1a9696.js"><link rel="prefetch" href="/blog/assets/js/69.127d4ccb.js"><link rel="prefetch" href="/blog/assets/js/7.34cfb431.js"><link rel="prefetch" href="/blog/assets/js/70.cb7a9ca8.js"><link rel="prefetch" href="/blog/assets/js/71.fc5012c0.js"><link rel="prefetch" href="/blog/assets/js/72.04308961.js"><link rel="prefetch" href="/blog/assets/js/73.3b80efd9.js"><link rel="prefetch" href="/blog/assets/js/74.009897a1.js"><link rel="prefetch" href="/blog/assets/js/75.00bb0c95.js"><link rel="prefetch" href="/blog/assets/js/76.0b9619cc.js"><link rel="prefetch" href="/blog/assets/js/77.3cdf8f24.js"><link rel="prefetch" href="/blog/assets/js/78.2db1c727.js"><link rel="prefetch" href="/blog/assets/js/79.342c3faa.js"><link rel="prefetch" href="/blog/assets/js/8.51e80c5b.js"><link rel="prefetch" href="/blog/assets/js/80.0439653b.js"><link rel="prefetch" href="/blog/assets/js/81.6c0e9802.js"><link rel="prefetch" href="/blog/assets/js/82.e6e1608a.js"><link rel="prefetch" href="/blog/assets/js/83.39a82281.js"><link rel="prefetch" href="/blog/assets/js/85.00b63f10.js"><link rel="prefetch" href="/blog/assets/js/86.1581db60.js"><link rel="prefetch" href="/blog/assets/js/87.4c47bbc2.js"><link rel="prefetch" href="/blog/assets/js/88.10af48c1.js"><link rel="prefetch" href="/blog/assets/js/89.84840655.js"><link rel="prefetch" href="/blog/assets/js/9.c76e1545.js"><link rel="prefetch" href="/blog/assets/js/90.574990da.js"><link rel="prefetch" href="/blog/assets/js/91.a1094788.js"><link rel="prefetch" href="/blog/assets/js/92.7070acb6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.389ed919.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/TB5.PNG" alt="Tang's Blog" class="logo"> <span class="site-name can-hide">Tang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link router-link-active">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link router-link-active">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Go Lang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/newlanguage/go/go1.html" class="sidebar-link">Go语言简介</a></li><li><a href="/blog/newlanguage/go/go2.html" class="sidebar-link">数据类型</a></li><li><a href="/blog/newlanguage/go/go3.html" class="sidebar-link">其他类型</a></li><li><a href="/blog/newlanguage/go/go4.html" aria-current="page" class="active sidebar-link">Go 流程控制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go4.html#if-else" class="sidebar-link">if else</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go4.html#for-循环结构" class="sidebar-link">for 循环结构</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go4.html#for-range-键值循环" class="sidebar-link">for range（键值循环）</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go4.html#switch-case" class="sidebar-link">switch case</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go4.html#break-跳出循环" class="sidebar-link">break：跳出循环</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go4.html#go-跳转到指定标签" class="sidebar-link">go：跳转到指定标签</a></li></ul></li><li><a href="/blog/newlanguage/go/go5.html" class="sidebar-link">Go中的包</a></li><li><a href="/blog/newlanguage/go/go6.html" class="sidebar-link">Go中的日期函数</a></li><li><a href="/blog/newlanguage/go/go7.html" class="sidebar-link">Go中的文件和目录操作</a></li><li><a href="/blog/newlanguage/go/go8.html" class="sidebar-link">Golang goroutine channel 实现并发和并行</a></li><li><a href="/blog/newlanguage/go/go9.html" class="sidebar-link">Go中的反射</a></li><li><a href="/blog/newlanguage/go/go10.html" class="sidebar-link">互联网协议</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="go-流程控制"><a href="#go-流程控制" class="header-anchor">#</a> Go 流程控制</h1> <p>流程控制是每种编程语言控制逻辑走向和执行次序的重要部分，流程控制可以说是一门语言的“经脉&quot;</p> <p>Go 语言中最常用的流程控制有if和for，而switch和goto主要是为了简化代码、降低重复代码而生的结构，属于扩展类的流程控制。</p> <h2 id="if-else"><a href="#if-else" class="header-anchor">#</a> if else</h2> <p>推荐if后面不适用括号，当然也可以使用括号括起来</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span>
+	<span class="token keyword">if</span> num <span class="token operator">==</span> <span class="token number">10</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;hello == 10&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;hello &gt; 10&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;hello &lt; 10&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>if的另外一种写法，下面的方法的区别是 num2是局部变量</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">if</span> num2<span class="token operator">:=</span> <span class="token number">10</span><span class="token punctuation">;</span> num2<span class="token operator">&gt;=</span><span class="token number">10</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;hello &gt;=10&quot;</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="for-循环结构"><a href="#for-循环结构" class="header-anchor">#</a> for 循环结构</h2> <p>Go语言中的所有循环类型均可使用for关键字来完成</p> <p>for循环的基本格式如下：</p> <div class="language- extra-class"><pre class="language-text"><code>for 初始语句; 条件表达式; 结束语句 {
+	循环体
+}
+</code></pre></div><p>条件表达式返回true时循环体不停地进行循环，直到条件表达式返回false时自动退出循环</p> <p>实例：打印1 ~ 10</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v &quot;</span><span class="token punctuation">,</span> i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>注意，在Go语言中，没有while语句，我们可以通过for来代替</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">for</span> <span class="token punctuation">{</span>
+    循环体
+<span class="token punctuation">}</span>
+</code></pre></div><p>for循环可以通过break、goto、return、panic语句退出循环</p> <h2 id="for-range-键值循环"><a href="#for-range-键值循环" class="header-anchor">#</a> for range（键值循环）</h2> <p>Go 语言中可以使用for range遍历数组、切片、字符串、map及通道（channel）。通过for range遍历的返回值有以下规律：</p> <ul><li>数组、切片、字符串返回索引和值。</li> <li>map返回键和值。</li> <li>通道（channel）只返回通道内的值。</li></ul> <p>实例：遍历字符串</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token string">&quot;你好golang&quot;</span>
+<span class="token keyword">for</span> key<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> str <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v - %c &quot;</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>遍历切片（数组）</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> array <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token builtin">string</span><span class="token punctuation">{</span><span class="token string">&quot;php&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;java&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;node&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;golang&quot;</span><span class="token punctuation">}</span>
+<span class="token keyword">for</span> index<span class="token punctuation">,</span> value <span class="token operator">:=</span> <span class="token keyword">range</span> array <span class="token punctuation">{</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v %s &quot;</span><span class="token punctuation">,</span> index<span class="token punctuation">,</span> value<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="switch-case"><a href="#switch-case" class="header-anchor">#</a> switch case</h2> <p>使用switch语句可方便的对大量的值进行条件判断</p> <div class="language-go extra-class"><pre class="language-go"><code>extname <span class="token operator">:=</span> <span class="token string">&quot;.a&quot;</span>
+<span class="token keyword">switch</span> extname <span class="token punctuation">{</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.html&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.html&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">break</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.doc&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.doc&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">break</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.js&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.js&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;其它后缀&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>switch的另外一种写法</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">switch</span> extname <span class="token operator">:=</span> <span class="token string">&quot;.a&quot;</span><span class="token punctuation">;</span> extname <span class="token punctuation">{</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.html&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.html&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">break</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.doc&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.doc&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">break</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.js&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.js&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;其它后缀&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>同时一个分支可以有多个值</p> <div class="language-go extra-class"><pre class="language-go"><code>extname <span class="token operator">:=</span> <span class="token string">&quot;.txt&quot;</span>
+<span class="token keyword">switch</span> extname <span class="token punctuation">{</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.html&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.html&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">break</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.txt&quot;</span><span class="token punctuation">,</span><span class="token string">&quot;.doc&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;传递来的是文档&quot;</span><span class="token punctuation">)</span>
+		<span class="token keyword">break</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">case</span> <span class="token string">&quot;.js&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;.js&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+	<span class="token keyword">default</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;其它后缀&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><blockquote><p>tip：在golang中，break可以不写，也能够跳出case，而不会执行其它的。</p></blockquote> <p>如果我们需要使用switch的穿透 fallthrought，fallthrough语法可以执行满足条件的 case 的下一个case，为了兼容c语言中的case设计</p> <div class="language- extra-class"><pre class="language-text"><code>extname := &quot;.txt&quot;
+switch extname {
+	case &quot;.html&quot;: {
+		fmt.Println(&quot;.html&quot;)
+		fallthrought
+	}
+	case &quot;.txt&quot;,&quot;.doc&quot;: {
+		fmt.Println(&quot;传递来的是文档&quot;)
+		fallthrought
+	}
+	case &quot;.js&quot;: {
+		fmt.Println(&quot;.js&quot;)
+		fallthrought
+	}
+	default: {
+		fmt.Println(&quot;其它后缀&quot;)
+	}
+}
+</code></pre></div><p>fallthrought 只能穿透紧挨着的一层，不会一直穿透，但是如果每一层都写的话，就会导致每一层都进行穿透</p> <h2 id="break-跳出循环"><a href="#break-跳出循环" class="header-anchor">#</a> break：跳出循环</h2> <p>Go语言中break 语句用于以下几个方面：</p> <ul><li>用于循环语句中跳出循环，并开始执行循环之后的语句。</li> <li>break在switch（开关语句）中在执行一条case后跳出语句的作用。</li> <li>在多重循环中，可以用标号label标出想break的循环。</li></ul> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token keyword">for</span>  <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> i <span class="token operator">==</span> <span class="token number">10</span><span class="token punctuation">{</span>
+        fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;跳出循环&quot;</span><span class="token punctuation">)</span>
+        <span class="token keyword">break</span>
+    <span class="token punctuation">}</span>
+    i<span class="token operator">++</span>
+    fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="go-跳转到指定标签"><a href="#go-跳转到指定标签" class="header-anchor">#</a> go：跳转到指定标签</h2> <p>goto 语句通过标签进行代码间的无条件跳转。goto 语句可以在快速跳出循环、避免重复退出上有一定的帮助。Go语言中使用goto语句能简化一些代码的实现过程。</p> <div class="language-go extra-class"><pre class="language-go"><code>	<span class="token keyword">var</span> n <span class="token operator">=</span> <span class="token number">20</span>
+	<span class="token keyword">if</span> n <span class="token operator">&gt;</span> <span class="token number">24</span> <span class="token punctuation">{</span>
+		fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;成年人&quot;</span><span class="token punctuation">)</span>
+	<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+		<span class="token keyword">goto</span> lable3
+	<span class="token punctuation">}</span>
+
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;aaa&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;bbb&quot;</span><span class="token punctuation">)</span>
+lable3<span class="token punctuation">:</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;ccc&quot;</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span><span class="token string">&quot;ddd&quot;</span><span class="token punctuation">)</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/newlanguage/go/go3.html" class="prev">
+        其他类型
+      </a></span> <span class="next"><a href="/blog/newlanguage/go/go5.html">
+        Go中的包
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.96a63ad2.js" defer></script><script src="/blog/assets/js/2.e671b9b2.js" defer></script><script src="/blog/assets/js/3.be9bea65.js" defer></script><script src="/blog/assets/js/84.4415141b.js" defer></script>
+  </body>
+</html>

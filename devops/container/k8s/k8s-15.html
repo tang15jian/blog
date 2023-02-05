@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kubernetes搭建高可用集群 | Tang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/TB5.PNG">
+    <meta name="description" content="This is a blog.">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.389ed919.css" as="style"><link rel="preload" href="/blog/assets/js/app.96a63ad2.js" as="script"><link rel="preload" href="/blog/assets/js/2.e671b9b2.js" as="script"><link rel="preload" href="/blog/assets/js/3.be9bea65.js" as="script"><link rel="preload" href="/blog/assets/js/41.014df883.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6769ccf0.js"><link rel="prefetch" href="/blog/assets/js/11.46df150a.js"><link rel="prefetch" href="/blog/assets/js/12.e78943d6.js"><link rel="prefetch" href="/blog/assets/js/13.5d361c1d.js"><link rel="prefetch" href="/blog/assets/js/14.13534fd9.js"><link rel="prefetch" href="/blog/assets/js/15.b21fe2e3.js"><link rel="prefetch" href="/blog/assets/js/16.bf5062c1.js"><link rel="prefetch" href="/blog/assets/js/17.65346b85.js"><link rel="prefetch" href="/blog/assets/js/18.6fb1bdc2.js"><link rel="prefetch" href="/blog/assets/js/19.c6e110df.js"><link rel="prefetch" href="/blog/assets/js/20.4a33f06a.js"><link rel="prefetch" href="/blog/assets/js/21.28170e84.js"><link rel="prefetch" href="/blog/assets/js/22.9358a818.js"><link rel="prefetch" href="/blog/assets/js/23.136a0f54.js"><link rel="prefetch" href="/blog/assets/js/24.499aeaaf.js"><link rel="prefetch" href="/blog/assets/js/25.3cff72a1.js"><link rel="prefetch" href="/blog/assets/js/26.4ee8c52f.js"><link rel="prefetch" href="/blog/assets/js/27.6e099c82.js"><link rel="prefetch" href="/blog/assets/js/28.bfc3427b.js"><link rel="prefetch" href="/blog/assets/js/29.ce801df4.js"><link rel="prefetch" href="/blog/assets/js/30.724cfbb6.js"><link rel="prefetch" href="/blog/assets/js/31.ffd0a663.js"><link rel="prefetch" href="/blog/assets/js/32.feba734b.js"><link rel="prefetch" href="/blog/assets/js/33.e8d22227.js"><link rel="prefetch" href="/blog/assets/js/34.a12f435a.js"><link rel="prefetch" href="/blog/assets/js/35.31d4b272.js"><link rel="prefetch" href="/blog/assets/js/36.a6d04eab.js"><link rel="prefetch" href="/blog/assets/js/37.d8aae5c8.js"><link rel="prefetch" href="/blog/assets/js/38.2d9e0b46.js"><link rel="prefetch" href="/blog/assets/js/39.f9bd73de.js"><link rel="prefetch" href="/blog/assets/js/4.850a33ae.js"><link rel="prefetch" href="/blog/assets/js/40.5ef065c5.js"><link rel="prefetch" href="/blog/assets/js/42.199ac029.js"><link rel="prefetch" href="/blog/assets/js/43.69e01de9.js"><link rel="prefetch" href="/blog/assets/js/44.b00eed2f.js"><link rel="prefetch" href="/blog/assets/js/45.f676a314.js"><link rel="prefetch" href="/blog/assets/js/46.d76b7b8a.js"><link rel="prefetch" href="/blog/assets/js/47.fa6622ba.js"><link rel="prefetch" href="/blog/assets/js/48.629ae724.js"><link rel="prefetch" href="/blog/assets/js/49.3f36b8cf.js"><link rel="prefetch" href="/blog/assets/js/5.c1ab3a44.js"><link rel="prefetch" href="/blog/assets/js/50.6429bdc0.js"><link rel="prefetch" href="/blog/assets/js/51.b7cb8687.js"><link rel="prefetch" href="/blog/assets/js/52.7360a167.js"><link rel="prefetch" href="/blog/assets/js/53.fb5fcabb.js"><link rel="prefetch" href="/blog/assets/js/54.f5ac5958.js"><link rel="prefetch" href="/blog/assets/js/55.592b0348.js"><link rel="prefetch" href="/blog/assets/js/56.d17f3acb.js"><link rel="prefetch" href="/blog/assets/js/57.11aeb3ed.js"><link rel="prefetch" href="/blog/assets/js/58.1b2f9f8b.js"><link rel="prefetch" href="/blog/assets/js/59.c5633b7a.js"><link rel="prefetch" href="/blog/assets/js/6.0106dfd1.js"><link rel="prefetch" href="/blog/assets/js/60.230b2314.js"><link rel="prefetch" href="/blog/assets/js/61.f9cb1ad6.js"><link rel="prefetch" href="/blog/assets/js/62.92f2597d.js"><link rel="prefetch" href="/blog/assets/js/63.25fe8e93.js"><link rel="prefetch" href="/blog/assets/js/64.08acc4bc.js"><link rel="prefetch" href="/blog/assets/js/65.cba08f56.js"><link rel="prefetch" href="/blog/assets/js/66.2aff3910.js"><link rel="prefetch" href="/blog/assets/js/67.23dfb624.js"><link rel="prefetch" href="/blog/assets/js/68.7e1a9696.js"><link rel="prefetch" href="/blog/assets/js/69.127d4ccb.js"><link rel="prefetch" href="/blog/assets/js/7.34cfb431.js"><link rel="prefetch" href="/blog/assets/js/70.cb7a9ca8.js"><link rel="prefetch" href="/blog/assets/js/71.fc5012c0.js"><link rel="prefetch" href="/blog/assets/js/72.04308961.js"><link rel="prefetch" href="/blog/assets/js/73.3b80efd9.js"><link rel="prefetch" href="/blog/assets/js/74.009897a1.js"><link rel="prefetch" href="/blog/assets/js/75.00bb0c95.js"><link rel="prefetch" href="/blog/assets/js/76.0b9619cc.js"><link rel="prefetch" href="/blog/assets/js/77.3cdf8f24.js"><link rel="prefetch" href="/blog/assets/js/78.2db1c727.js"><link rel="prefetch" href="/blog/assets/js/79.342c3faa.js"><link rel="prefetch" href="/blog/assets/js/8.51e80c5b.js"><link rel="prefetch" href="/blog/assets/js/80.0439653b.js"><link rel="prefetch" href="/blog/assets/js/81.6c0e9802.js"><link rel="prefetch" href="/blog/assets/js/82.e6e1608a.js"><link rel="prefetch" href="/blog/assets/js/83.39a82281.js"><link rel="prefetch" href="/blog/assets/js/84.4415141b.js"><link rel="prefetch" href="/blog/assets/js/85.00b63f10.js"><link rel="prefetch" href="/blog/assets/js/86.1581db60.js"><link rel="prefetch" href="/blog/assets/js/87.4c47bbc2.js"><link rel="prefetch" href="/blog/assets/js/88.10af48c1.js"><link rel="prefetch" href="/blog/assets/js/89.84840655.js"><link rel="prefetch" href="/blog/assets/js/9.c76e1545.js"><link rel="prefetch" href="/blog/assets/js/90.574990da.js"><link rel="prefetch" href="/blog/assets/js/91.a1094788.js"><link rel="prefetch" href="/blog/assets/js/92.7070acb6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.389ed919.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/TB5.PNG" alt="Tang's Blog" class="logo"> <span class="site-name can-hide">Tang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link router-link-active">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link router-link-active">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Github</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/repository/github.html" class="sidebar-link">GitHub</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Jenkins</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/ci/jenkins.html" class="sidebar-link">Jenkins</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>容器</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>Kubenetes</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/container/k8s/k8s-1.html" class="sidebar-link">Kubenetes简介</a></li><li><a href="/blog/devops/container/k8s/k8s-2.html" class="sidebar-link">搭建Kubenetes</a></li><li><a href="/blog/devops/container/k8s/k8s-3.html" class="sidebar-link">Kubernetes集群管理工具kubectl</a></li><li><a href="/blog/devops/container/k8s/k8s-4.html" class="sidebar-link">Kubernetes集群YAML文件详解</a></li><li><a href="/blog/devops/container/k8s/k8s-5.html" class="sidebar-link">Kubernetes核心技术Pod</a></li><li><a href="/blog/devops/container/k8s/k8s-6.html" class="sidebar-link">Kubernetes核心技术-Controller</a></li><li><a href="/blog/devops/container/k8s/k8s-7.html" class="sidebar-link">Kubernetes核心技术Service</a></li><li><a href="/blog/devops/container/k8s/k8s-8.html" class="sidebar-link">Kubernetes控制器Controller详解</a></li><li><a href="/blog/devops/container/k8s/k8s-9.html" class="sidebar-link">Kubernetes配置管理</a></li><li><a href="/blog/devops/container/k8s/k8s-10.html" class="sidebar-link">Kubernetes集群安全机制</a></li><li><a href="/blog/devops/container/k8s/k8s-11.html" class="sidebar-link">Kubernetes核心技术Ingress</a></li><li><a href="/blog/devops/container/k8s/k8s-12.html" class="sidebar-link">Kubernetes核心技术Helm</a></li><li><a href="/blog/devops/container/k8s/k8s-13.html" class="sidebar-link">Kubernetes持久化存储</a></li><li><a href="/blog/devops/container/k8s/k8s-14.html" class="sidebar-link">Kubernetes集群资源监控</a></li><li><a href="/blog/devops/container/k8s/k8s-15.html" aria-current="page" class="active sidebar-link">Kubernetes搭建高可用集群</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#前言" class="sidebar-link">前言</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#高可用集群" class="sidebar-link">高可用集群</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#高可用集群技术细节" class="sidebar-link">高可用集群技术细节</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#高可用集群步骤" class="sidebar-link">高可用集群步骤</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#初始化操作" class="sidebar-link">初始化操作</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#部署keepalived" class="sidebar-link">部署keepAlived</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#安装相关包" class="sidebar-link">安装相关包</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#配置master节点" class="sidebar-link">配置master节点</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#启动和检查" class="sidebar-link">启动和检查</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#部署haproxy" class="sidebar-link">部署haproxy</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#配置" class="sidebar-link">配置</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#安装docker、kubeadm、kubectl" class="sidebar-link">安装Docker、Kubeadm、kubectl</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#安装docker" class="sidebar-link">安装Docker</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#添加kubernetes软件源" class="sidebar-link">添加kubernetes软件源</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#安装kubeadm-kubelet和kubectl" class="sidebar-link">安装kubeadm，kubelet和kubectl</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#部署kubernetes-master【master节点】" class="sidebar-link">部署Kubernetes Master【master节点】</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#创建kubeadm配置文件" class="sidebar-link">创建kubeadm配置文件</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#安装集群网络" class="sidebar-link">安装集群网络</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#master2节点加入集群" class="sidebar-link">master2节点加入集群</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#复制密钥及相关文件" class="sidebar-link">复制密钥及相关文件</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#master2加入集群" class="sidebar-link">master2加入集群</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#加入kubernetes-node" class="sidebar-link">加入Kubernetes Node</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-15.html#测试kubernetes集群" class="sidebar-link">测试kubernetes集群</a></li></ul></li><li><a href="/blog/devops/container/k8s/k8s-16.html" class="sidebar-link">Kubernetes容器交付介绍</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>Docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/container/docker1.html" class="sidebar-link">Docker基础</a></li><li><a href="/blog/devops/container/docker2.html" class="sidebar-link">Docker进阶</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>日志分析</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/log/elk.html" class="sidebar-link">ELK</a></li><li><a href="/blog/devops/log/splunk.html" class="sidebar-link">Splunk</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>监控</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/monitor/promethus.html" class="sidebar-link">Promethus</a></li><li><a href="/blog/devops/monitor/dynatrace.html" class="sidebar-link">Dynatrace</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="kubernetes搭建高可用集群"><a href="#kubernetes搭建高可用集群" class="header-anchor">#</a> Kubernetes搭建高可用集群</h1> <h2 id="前言"><a href="#前言" class="header-anchor">#</a> 前言</h2> <p>之前我们搭建的集群，只有一个master节点，当master节点宕机的时候，通过node将无法继续访问，而master主要是管理作用，所以整个集群将无法提供服务</p> <p><img src="images/image-20201121164522945.png" alt="image-20201121164522945"></p> <h2 id="高可用集群"><a href="#高可用集群" class="header-anchor">#</a> 高可用集群</h2> <p>下面我们就需要搭建一个多master节点的高可用集群，不会存在单点故障问题</p> <p>但是在node 和 master节点之间，需要存在一个 LoadBalancer组件，作用如下：</p> <ul><li>负载</li> <li>检查master节点的状态</li></ul> <p><img src="images/image-20201121164931760.png" alt="image-20201121164931760"></p> <p>对外有一个统一的VIP：虚拟ip来对外进行访问</p> <h2 id="高可用集群技术细节"><a href="#高可用集群技术细节" class="header-anchor">#</a> 高可用集群技术细节</h2> <p>高可用集群技术细节如下所示：</p> <p><img src="images/image-20201121165325194.png" alt="image-20201121165325194"></p> <ul><li>keepalived：配置虚拟ip，检查节点的状态</li> <li>haproxy：负载均衡服务【类似于nginx】</li> <li>apiserver：</li> <li>controller：</li> <li>manager：</li> <li>scheduler：</li></ul> <h2 id="高可用集群步骤"><a href="#高可用集群步骤" class="header-anchor">#</a> 高可用集群步骤</h2> <p>我们采用2个master节点，一个node节点来搭建高可用集群，下面给出了每个节点需要做的事情</p> <p><img src="images/image-20201121170351461.png" alt="image-20201121170351461"></p> <h2 id="初始化操作"><a href="#初始化操作" class="header-anchor">#</a> 初始化操作</h2> <p>我们需要在这三个节点上进行操作</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 关闭防火墙</span>
+systemctl stop firewalld
+systemctl disable firewalld
+
+<span class="token comment"># 关闭selinux</span>
+<span class="token comment"># 永久关闭</span>
+<span class="token function">sed</span> -i <span class="token string">'s/enforcing/disabled/'</span> /etc/selinux/config  
+<span class="token comment"># 临时关闭</span>
+setenforce <span class="token number">0</span>  
+
+<span class="token comment"># 关闭swap</span>
+<span class="token comment"># 临时</span>
+swapoff -a 
+<span class="token comment"># 永久关闭</span>
+<span class="token function">sed</span> -ri <span class="token string">'s/.*swap.*/#&amp;/'</span> /etc/fstab
+
+<span class="token comment"># 根据规划设置主机名【master1节点上操作】</span>
+hostnamectl set-hostname master1
+<span class="token comment"># 根据规划设置主机名【master2节点上操作】</span>
+hostnamectl set-hostname master1
+<span class="token comment"># 根据规划设置主机名【node1节点操作】</span>
+hostnamectl set-hostname node1
+
+<span class="token comment"># r添加hosts</span>
+<span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> /etc/hosts <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+192.168.44.158  k8smaster
+192.168.44.155 master01.k8s.io master1
+192.168.44.156 master02.k8s.io master2
+192.168.44.157 node01.k8s.io node1
+EOF</span>
+
+
+<span class="token comment"># 将桥接的IPv4流量传递到iptables的链【3个节点上都执行】</span>
+<span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/sysctl.d/k8s.conf <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+net.bridge.bridge-nf-call-ip6tables = 1
+net.bridge.bridge-nf-call-iptables = 1
+EOF</span>
+
+<span class="token comment"># 生效</span>
+sysctl --system  
+
+<span class="token comment"># 时间同步</span>
+yum <span class="token function">install</span> ntpdate -y
+ntpdate time.windows.com
+</code></pre></div><h2 id="部署keepalived"><a href="#部署keepalived" class="header-anchor">#</a> 部署keepAlived</h2> <p>下面我们需要在所有的master节点【master1和master2】上部署keepAlive</p> <h3 id="安装相关包"><a href="#安装相关包" class="header-anchor">#</a> 安装相关包</h3> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装相关工具</span>
+yum <span class="token function">install</span> -y conntrack-tools libseccomp libtool-ltdl
+<span class="token comment"># 安装keepalived</span>
+yum <span class="token function">install</span> -y keepalived
+</code></pre></div><h3 id="配置master节点"><a href="#配置master节点" class="header-anchor">#</a> 配置master节点</h3> <p>添加master1的配置</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/keepalived/keepalived.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF 
+! Configuration File for keepalived
+
+global_defs {
+   router_id k8s
+}
+
+vrrp_script check_haproxy {
+    script &quot;killall -0 haproxy&quot;
+    interval 3
+    weight -2
+    fall 10
+    rise 2
+}
+
+vrrp_instance VI_1 {
+    state MASTER 
+    interface ens33 
+    virtual_router_id 51
+    priority 250
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass ceb1b3ec013d66163d6ab
+    }
+    virtual_ipaddress {
+        192.168.44.158
+    }
+    track_script {
+        check_haproxy
+    }
+
+}
+EOF</span>
+</code></pre></div><p>添加master2的配置</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/keepalived/keepalived.conf <span class="token operator">&lt;&lt;</span><span class="token string">EOF 
+! Configuration File for keepalived
+
+global_defs {
+   router_id k8s
+}
+
+vrrp_script check_haproxy {
+    script &quot;killall -0 haproxy&quot;
+    interval 3
+    weight -2
+    fall 10
+    rise 2
+}
+
+vrrp_instance VI_1 {
+    state BACKUP 
+    interface ens33 
+    virtual_router_id 51
+    priority 200
+    advert_int 1
+    authentication {
+        auth_type PASS
+        auth_pass ceb1b3ec013d66163d6ab
+    }
+    virtual_ipaddress {
+        192.168.44.158
+    }
+    track_script {
+        check_haproxy
+    }
+
+}
+EOF</span>
+</code></pre></div><h3 id="启动和检查"><a href="#启动和检查" class="header-anchor">#</a> 启动和检查</h3> <p>在两台master节点都执行</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 启动keepalived</span>
+systemctl start keepalived.service
+<span class="token comment"># 设置开机启动</span>
+systemctl <span class="token builtin class-name">enable</span> keepalived.service
+<span class="token comment"># 查看启动状态</span>
+systemctl status keepalived.service
+</code></pre></div><p>启动后查看master的网卡信息</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">ip</span> a s ens33
+</code></pre></div><p><img src="images/image-20201121171619497.png" alt="image-20201121171619497"></p> <h2 id="部署haproxy"><a href="#部署haproxy" class="header-anchor">#</a> 部署haproxy</h2> <p>haproxy主要做负载的作用，将我们的请求分担到不同的node节点上</p> <h3 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h3> <p>在两个master节点安装 haproxy</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装haproxy</span>
+yum <span class="token function">install</span> -y haproxy
+<span class="token comment"># 启动 haproxy</span>
+systemctl start haproxy
+<span class="token comment"># 开启自启</span>
+systemctl <span class="token builtin class-name">enable</span> haproxy
+</code></pre></div><p>启动后，我们查看对应的端口是否包含 16443</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">netstat</span> -tunlp <span class="token operator">|</span> <span class="token function">grep</span> haproxy
+</code></pre></div><p><img src="images/image-20201121181803128.png" alt="image-20201121181803128"></p> <h3 id="配置"><a href="#配置" class="header-anchor">#</a> 配置</h3> <p>两台master节点的配置均相同，配置中声明了后端代理的两个master节点服务器，指定了haproxy运行的端口为16443等，因此16443端口为集群的入口</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/haproxy/haproxy.cfg <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+#---------------------------------------------------------------------
+# Global settings
+#---------------------------------------------------------------------
+global
+    # to have these messages end up in /var/log/haproxy.log you will
+    # need to:
+    # 1) configure syslog to accept network log events.  This is done
+    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
+    #    /etc/sysconfig/syslog
+    # 2) configure local2 events to go to the /var/log/haproxy.log
+    #   file. A line like the following can be added to
+    #   /etc/sysconfig/syslog
+    #
+    #    local2.*                       /var/log/haproxy.log
+    #
+    log         127.0.0.1 local2
+    
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     4000
+    user        haproxy
+    group       haproxy
+    daemon 
+       
+    # turn on stats unix socket
+    stats socket /var/lib/haproxy/stats
+#---------------------------------------------------------------------
+# common defaults that all the 'listen' and 'backend' sections will
+# use if not designated in their block
+#---------------------------------------------------------------------  
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    option                  dontlognull
+    option http-server-close
+    option forwardfor       except 127.0.0.0/8
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 3000
+#---------------------------------------------------------------------
+# kubernetes apiserver frontend which proxys to the backends
+#--------------------------------------------------------------------- 
+frontend kubernetes-apiserver
+    mode                 tcp
+    bind                 *:16443
+    option               tcplog
+    default_backend      kubernetes-apiserver    
+#---------------------------------------------------------------------
+# round robin balancing between the various backends
+#---------------------------------------------------------------------
+backend kubernetes-apiserver
+    mode        tcp
+    balance     roundrobin
+    server      master01.k8s.io   192.168.44.155:6443 check
+    server      master02.k8s.io   192.168.44.156:6443 check
+#---------------------------------------------------------------------
+# collection haproxy statistics message
+#---------------------------------------------------------------------
+listen stats
+    bind                 *:1080
+    stats auth           admin:awesomePassword
+    stats refresh        5s
+    stats realm          HAProxy\ Statistics
+    stats uri            /admin?stats
+EOF</span>
+</code></pre></div><h2 id="安装docker、kubeadm、kubectl"><a href="#安装docker、kubeadm、kubectl" class="header-anchor">#</a> 安装Docker、Kubeadm、kubectl</h2> <p>所有节点安装Docker/kubeadm/kubelet ，Kubernetes默认CRI（容器运行时）为Docker，因此先安装Docker</p> <h3 id="安装docker"><a href="#安装docker" class="header-anchor">#</a> 安装Docker</h3> <p>首先配置一下Docker的阿里yum源</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;</span>/etc/yum.repos.d/docker.repo<span class="token operator">&lt;&lt;</span><span class="token string">EOF
+[docker-ce-edge]
+name=Docker CE Edge - \<span class="token variable">$basearch</span>
+baseurl=https://mirrors.aliyun.com/docker-ce/linux/centos/7/\<span class="token variable">$basearch</span>/edge
+enabled=1
+gpgcheck=1
+gpgkey=https://mirrors.aliyun.com/docker-ce/linux/centos/gpg
+EOF</span>
+</code></pre></div><p>然后yum方式安装docker</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># yum安装</span>
+yum -y <span class="token function">install</span> docker-ce
+
+<span class="token comment"># 查看docker版本</span>
+docker --version  
+
+<span class="token comment"># 启动docker</span>
+systemctl <span class="token builtin class-name">enable</span> docker
+systemctl start docker
+</code></pre></div><p>配置docker的镜像源</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;&gt;</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+{
+  &quot;registry-mirrors&quot;: [&quot;https://b9pmyelo.mirror.aliyuncs.com&quot;]
+}
+EOF</span>
+</code></pre></div><p>然后重启docker</p> <div class="language-bash extra-class"><pre class="language-bash"><code>systemctl restart docker
+</code></pre></div><h3 id="添加kubernetes软件源"><a href="#添加kubernetes软件源" class="header-anchor">#</a> 添加kubernetes软件源</h3> <p>然后我们还需要配置一下yum的k8s软件源</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token operator">&gt;</span> /etc/yum.repos.d/kubernetes.repo <span class="token operator">&lt;&lt;</span> <span class="token string">EOF
+[kubernetes]
+name=Kubernetes
+baseurl=https://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF</span>
+</code></pre></div><h3 id="安装kubeadm-kubelet和kubectl"><a href="#安装kubeadm-kubelet和kubectl" class="header-anchor">#</a> 安装kubeadm，kubelet和kubectl</h3> <p>由于版本更新频繁，这里指定版本号部署：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 安装kubelet、kubeadm、kubectl，同时指定版本</span>
+yum <span class="token function">install</span> -y kubelet-1.18.0 kubeadm-1.18.0 kubectl-1.18.0
+<span class="token comment"># 设置开机启动</span>
+systemctl <span class="token builtin class-name">enable</span> kubelet
+</code></pre></div><h2 id="部署kubernetes-master【master节点】"><a href="#部署kubernetes-master【master节点】" class="header-anchor">#</a> 部署Kubernetes Master【master节点】</h2> <h3 id="创建kubeadm配置文件"><a href="#创建kubeadm配置文件" class="header-anchor">#</a> 创建kubeadm配置文件</h3> <p>在具有vip的master上进行初始化操作，这里为master1</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建文件夹</span>
+<span class="token function">mkdir</span> /usr/local/kubernetes/manifests -p
+<span class="token comment"># 到manifests目录</span>
+<span class="token builtin class-name">cd</span> /usr/local/kubernetes/manifests/
+<span class="token comment"># 新建yaml文件</span>
+<span class="token function">vi</span> kubeadm-config.yaml
+</code></pre></div><p>yaml内容如下所示：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>apiServer:
+  certSANs:
+    - master1
+    - master2
+    - master.k8s.io
+    - <span class="token number">192.168</span>.44.158
+    - <span class="token number">192.168</span>.44.155
+    - <span class="token number">192.168</span>.44.156
+    - <span class="token number">127.0</span>.0.1
+  extraArgs:
+    authorization-mode: Node,RBAC
+  timeoutForControlPlane: 4m0s
+apiVersion: kubeadm.k8s.io/v1beta1
+certificatesDir: /etc/kubernetes/pki
+clusterName: kubernetes
+controlPlaneEndpoint: <span class="token string">&quot;master.k8s.io:16443&quot;</span>
+controllerManager: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+dns: 
+  type: CoreDNS
+etcd:
+  local:    
+    dataDir: /var/lib/etcd
+imageRepository: registry.aliyuncs.com/google_containers
+kind: ClusterConfiguration
+kubernetesVersion: v1.16.3
+networking: 
+  dnsDomain: cluster.local  
+  podSubnet: <span class="token number">10.244</span>.0.0/16
+  serviceSubnet: <span class="token number">10.1</span>.0.0/16
+scheduler: <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>然后我们在 master1 节点执行</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm init --config kubeadm-config.yaml
+</code></pre></div><p>执行完成后，就会在拉取我们的进行了【需要等待...】</p> <p><img src="images/image-20201121194928988.png" alt="image-20201121194928988"></p> <p>按照提示配置环境变量，使用kubectl工具</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 执行下方命令</span>
+<span class="token function">mkdir</span> -p <span class="token environment constant">$HOME</span>/.kube
+<span class="token function">sudo</span> <span class="token function">cp</span> -i /etc/kubernetes/admin.conf <span class="token environment constant">$HOME</span>/.kube/config
+<span class="token function">sudo</span> <span class="token function">chown</span> <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -u<span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable"><span class="token variable">$(</span><span class="token function">id</span> -g<span class="token variable">)</span></span> <span class="token environment constant">$HOME</span>/.kube/config
+<span class="token comment"># 查看节点</span>
+kubectl get nodes
+<span class="token comment"># 查看pod</span>
+kubectl get pods -n kube-system
+</code></pre></div><p><strong>按照提示保存以下内容，一会要使用：</strong></p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm <span class="token function">join</span> master.k8s.io:16443 --token jv5z7n.3y1zi95p952y9p65 <span class="token punctuation">\</span>
+    --discovery-token-ca-cert-hash sha256:403bca185c2f3a4791685013499e7ce58f9848e2213e27194b75a2e3293d8812 <span class="token punctuation">\</span>
+    --control-plane 
+</code></pre></div><blockquote><p>--control-plane ： 只有在添加master节点的时候才有</p></blockquote> <p>查看集群状态</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 查看集群状态</span>
+kubectl get cs
+<span class="token comment"># 查看pod</span>
+kubectl get pods -n kube-system
+</code></pre></div><h2 id="安装集群网络"><a href="#安装集群网络" class="header-anchor">#</a> 安装集群网络</h2> <p>从官方地址获取到flannel的yaml，在master1上执行</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建文件夹</span>
+<span class="token function">mkdir</span> flannel
+<span class="token builtin class-name">cd</span> flannel
+<span class="token comment"># 下载yaml文件</span>
+<span class="token function">wget</span> -c https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
+</code></pre></div><p>安装flannel网络</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl apply -f kube-flannel.yml 
+</code></pre></div><p>检查</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get pods -n kube-system
+</code></pre></div><h2 id="master2节点加入集群"><a href="#master2节点加入集群" class="header-anchor">#</a> master2节点加入集群</h2> <h3 id="复制密钥及相关文件"><a href="#复制密钥及相关文件" class="header-anchor">#</a> 复制密钥及相关文件</h3> <p>从master1复制密钥及相关文件到master2</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># ssh root@192.168.44.156 mkdir -p /etc/kubernetes/pki/etcd</span>
+
+<span class="token comment"># scp /etc/kubernetes/admin.conf root@192.168.44.156:/etc/kubernetes</span>
+   
+<span class="token comment"># scp /etc/kubernetes/pki/{ca.*,sa.*,front-proxy-ca.*} root@192.168.44.156:/etc/kubernetes/pki</span>
+   
+<span class="token comment"># scp /etc/kubernetes/pki/etcd/ca.* root@192.168.44.156:/etc/kubernetes/pki/etcd</span>
+</code></pre></div><h3 id="master2加入集群"><a href="#master2加入集群" class="header-anchor">#</a> master2加入集群</h3> <p>执行在master1上init后输出的join命令,需要带上参数<code>--control-plane</code>表示把master控制节点加入集群</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm <span class="token function">join</span> master.k8s.io:16443 --token ckf7bs.30576l0okocepg8b     --discovery-token-ca-cert-hash sha256:19afac8b11182f61073e254fb57b9f19ab4d798b70501036fc69ebef46094aba --control-plane
+</code></pre></div><p>检查状态</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get node
+
+kubectl get pods --all-namespaces
+</code></pre></div><h2 id="加入kubernetes-node"><a href="#加入kubernetes-node" class="header-anchor">#</a> 加入Kubernetes Node</h2> <p>在node1上执行</p> <p>向集群添加新节点，执行在kubeadm init输出的kubeadm join命令：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubeadm <span class="token function">join</span> master.k8s.io:16443 --token ckf7bs.30576l0okocepg8b     --discovery-token-ca-cert-hash sha256:19afac8b11182f61073e254fb57b9f19ab4d798b70501036fc69ebef46094aba
+</code></pre></div><p><strong>集群网络重新安装，因为添加了新的node节点</strong></p> <p>检查状态</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get node
+kubectl get pods --all-namespaces
+</code></pre></div><h2 id="测试kubernetes集群"><a href="#测试kubernetes集群" class="header-anchor">#</a> 测试kubernetes集群</h2> <p>在Kubernetes集群中创建一个pod，验证是否正常运行：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建nginx deployment</span>
+kubectl create deployment nginx --image<span class="token operator">=</span>nginx
+<span class="token comment"># 暴露端口</span>
+kubectl expose deployment nginx --port<span class="token operator">=</span><span class="token number">80</span> --type<span class="token operator">=</span>NodePort
+<span class="token comment"># 查看状态</span>
+kubectl get pod,svc
+</code></pre></div><p>然后我们通过任何一个节点，都能够访问我们的nginx页面</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/5/2023, 4:38:02 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/devops/container/k8s/k8s-14.html" class="prev">
+        Kubernetes集群资源监控
+      </a></span> <span class="next"><a href="/blog/devops/container/k8s/k8s-16.html">
+        Kubernetes容器交付介绍
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.96a63ad2.js" defer></script><script src="/blog/assets/js/2.e671b9b2.js" defer></script><script src="/blog/assets/js/3.be9bea65.js" defer></script><script src="/blog/assets/js/41.014df883.js" defer></script>
+  </body>
+</html>

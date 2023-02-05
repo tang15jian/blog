@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Kubernetes集群资源监控 | Tang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/TB5.PNG">
+    <meta name="description" content="This is a blog.">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.389ed919.css" as="style"><link rel="preload" href="/blog/assets/js/app.96a63ad2.js" as="script"><link rel="preload" href="/blog/assets/js/2.e671b9b2.js" as="script"><link rel="preload" href="/blog/assets/js/3.be9bea65.js" as="script"><link rel="preload" href="/blog/assets/js/40.5ef065c5.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6769ccf0.js"><link rel="prefetch" href="/blog/assets/js/11.46df150a.js"><link rel="prefetch" href="/blog/assets/js/12.e78943d6.js"><link rel="prefetch" href="/blog/assets/js/13.5d361c1d.js"><link rel="prefetch" href="/blog/assets/js/14.13534fd9.js"><link rel="prefetch" href="/blog/assets/js/15.b21fe2e3.js"><link rel="prefetch" href="/blog/assets/js/16.bf5062c1.js"><link rel="prefetch" href="/blog/assets/js/17.65346b85.js"><link rel="prefetch" href="/blog/assets/js/18.6fb1bdc2.js"><link rel="prefetch" href="/blog/assets/js/19.c6e110df.js"><link rel="prefetch" href="/blog/assets/js/20.4a33f06a.js"><link rel="prefetch" href="/blog/assets/js/21.28170e84.js"><link rel="prefetch" href="/blog/assets/js/22.9358a818.js"><link rel="prefetch" href="/blog/assets/js/23.136a0f54.js"><link rel="prefetch" href="/blog/assets/js/24.499aeaaf.js"><link rel="prefetch" href="/blog/assets/js/25.3cff72a1.js"><link rel="prefetch" href="/blog/assets/js/26.4ee8c52f.js"><link rel="prefetch" href="/blog/assets/js/27.6e099c82.js"><link rel="prefetch" href="/blog/assets/js/28.bfc3427b.js"><link rel="prefetch" href="/blog/assets/js/29.ce801df4.js"><link rel="prefetch" href="/blog/assets/js/30.724cfbb6.js"><link rel="prefetch" href="/blog/assets/js/31.ffd0a663.js"><link rel="prefetch" href="/blog/assets/js/32.feba734b.js"><link rel="prefetch" href="/blog/assets/js/33.e8d22227.js"><link rel="prefetch" href="/blog/assets/js/34.a12f435a.js"><link rel="prefetch" href="/blog/assets/js/35.31d4b272.js"><link rel="prefetch" href="/blog/assets/js/36.a6d04eab.js"><link rel="prefetch" href="/blog/assets/js/37.d8aae5c8.js"><link rel="prefetch" href="/blog/assets/js/38.2d9e0b46.js"><link rel="prefetch" href="/blog/assets/js/39.f9bd73de.js"><link rel="prefetch" href="/blog/assets/js/4.850a33ae.js"><link rel="prefetch" href="/blog/assets/js/41.014df883.js"><link rel="prefetch" href="/blog/assets/js/42.199ac029.js"><link rel="prefetch" href="/blog/assets/js/43.69e01de9.js"><link rel="prefetch" href="/blog/assets/js/44.b00eed2f.js"><link rel="prefetch" href="/blog/assets/js/45.f676a314.js"><link rel="prefetch" href="/blog/assets/js/46.d76b7b8a.js"><link rel="prefetch" href="/blog/assets/js/47.fa6622ba.js"><link rel="prefetch" href="/blog/assets/js/48.629ae724.js"><link rel="prefetch" href="/blog/assets/js/49.3f36b8cf.js"><link rel="prefetch" href="/blog/assets/js/5.c1ab3a44.js"><link rel="prefetch" href="/blog/assets/js/50.6429bdc0.js"><link rel="prefetch" href="/blog/assets/js/51.b7cb8687.js"><link rel="prefetch" href="/blog/assets/js/52.7360a167.js"><link rel="prefetch" href="/blog/assets/js/53.fb5fcabb.js"><link rel="prefetch" href="/blog/assets/js/54.f5ac5958.js"><link rel="prefetch" href="/blog/assets/js/55.592b0348.js"><link rel="prefetch" href="/blog/assets/js/56.d17f3acb.js"><link rel="prefetch" href="/blog/assets/js/57.11aeb3ed.js"><link rel="prefetch" href="/blog/assets/js/58.1b2f9f8b.js"><link rel="prefetch" href="/blog/assets/js/59.c5633b7a.js"><link rel="prefetch" href="/blog/assets/js/6.0106dfd1.js"><link rel="prefetch" href="/blog/assets/js/60.230b2314.js"><link rel="prefetch" href="/blog/assets/js/61.f9cb1ad6.js"><link rel="prefetch" href="/blog/assets/js/62.92f2597d.js"><link rel="prefetch" href="/blog/assets/js/63.25fe8e93.js"><link rel="prefetch" href="/blog/assets/js/64.08acc4bc.js"><link rel="prefetch" href="/blog/assets/js/65.cba08f56.js"><link rel="prefetch" href="/blog/assets/js/66.2aff3910.js"><link rel="prefetch" href="/blog/assets/js/67.23dfb624.js"><link rel="prefetch" href="/blog/assets/js/68.7e1a9696.js"><link rel="prefetch" href="/blog/assets/js/69.127d4ccb.js"><link rel="prefetch" href="/blog/assets/js/7.34cfb431.js"><link rel="prefetch" href="/blog/assets/js/70.cb7a9ca8.js"><link rel="prefetch" href="/blog/assets/js/71.fc5012c0.js"><link rel="prefetch" href="/blog/assets/js/72.04308961.js"><link rel="prefetch" href="/blog/assets/js/73.3b80efd9.js"><link rel="prefetch" href="/blog/assets/js/74.009897a1.js"><link rel="prefetch" href="/blog/assets/js/75.00bb0c95.js"><link rel="prefetch" href="/blog/assets/js/76.0b9619cc.js"><link rel="prefetch" href="/blog/assets/js/77.3cdf8f24.js"><link rel="prefetch" href="/blog/assets/js/78.2db1c727.js"><link rel="prefetch" href="/blog/assets/js/79.342c3faa.js"><link rel="prefetch" href="/blog/assets/js/8.51e80c5b.js"><link rel="prefetch" href="/blog/assets/js/80.0439653b.js"><link rel="prefetch" href="/blog/assets/js/81.6c0e9802.js"><link rel="prefetch" href="/blog/assets/js/82.e6e1608a.js"><link rel="prefetch" href="/blog/assets/js/83.39a82281.js"><link rel="prefetch" href="/blog/assets/js/84.4415141b.js"><link rel="prefetch" href="/blog/assets/js/85.00b63f10.js"><link rel="prefetch" href="/blog/assets/js/86.1581db60.js"><link rel="prefetch" href="/blog/assets/js/87.4c47bbc2.js"><link rel="prefetch" href="/blog/assets/js/88.10af48c1.js"><link rel="prefetch" href="/blog/assets/js/89.84840655.js"><link rel="prefetch" href="/blog/assets/js/9.c76e1545.js"><link rel="prefetch" href="/blog/assets/js/90.574990da.js"><link rel="prefetch" href="/blog/assets/js/91.a1094788.js"><link rel="prefetch" href="/blog/assets/js/92.7070acb6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.389ed919.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/TB5.PNG" alt="Tang's Blog" class="logo"> <span class="site-name can-hide">Tang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link router-link-active">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link router-link-active">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Github</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/repository/github.html" class="sidebar-link">GitHub</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Jenkins</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/ci/jenkins.html" class="sidebar-link">Jenkins</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>容器</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>Kubenetes</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/container/k8s/k8s-1.html" class="sidebar-link">Kubenetes简介</a></li><li><a href="/blog/devops/container/k8s/k8s-2.html" class="sidebar-link">搭建Kubenetes</a></li><li><a href="/blog/devops/container/k8s/k8s-3.html" class="sidebar-link">Kubernetes集群管理工具kubectl</a></li><li><a href="/blog/devops/container/k8s/k8s-4.html" class="sidebar-link">Kubernetes集群YAML文件详解</a></li><li><a href="/blog/devops/container/k8s/k8s-5.html" class="sidebar-link">Kubernetes核心技术Pod</a></li><li><a href="/blog/devops/container/k8s/k8s-6.html" class="sidebar-link">Kubernetes核心技术-Controller</a></li><li><a href="/blog/devops/container/k8s/k8s-7.html" class="sidebar-link">Kubernetes核心技术Service</a></li><li><a href="/blog/devops/container/k8s/k8s-8.html" class="sidebar-link">Kubernetes控制器Controller详解</a></li><li><a href="/blog/devops/container/k8s/k8s-9.html" class="sidebar-link">Kubernetes配置管理</a></li><li><a href="/blog/devops/container/k8s/k8s-10.html" class="sidebar-link">Kubernetes集群安全机制</a></li><li><a href="/blog/devops/container/k8s/k8s-11.html" class="sidebar-link">Kubernetes核心技术Ingress</a></li><li><a href="/blog/devops/container/k8s/k8s-12.html" class="sidebar-link">Kubernetes核心技术Helm</a></li><li><a href="/blog/devops/container/k8s/k8s-13.html" class="sidebar-link">Kubernetes持久化存储</a></li><li><a href="/blog/devops/container/k8s/k8s-14.html" aria-current="page" class="active sidebar-link">Kubernetes集群资源监控</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-14.html#概述" class="sidebar-link">概述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-14.html#监控指标" class="sidebar-link">监控指标</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-14.html#监控平台" class="sidebar-link">监控平台</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-14.html#部署prometheus" class="sidebar-link">部署prometheus</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-14.html#配置数据源" class="sidebar-link">配置数据源</a></li><li class="sidebar-sub-header"><a href="/blog/devops/container/k8s/k8s-14.html#设置显示数据的模板" class="sidebar-link">设置显示数据的模板</a></li></ul></li></ul></li><li><a href="/blog/devops/container/k8s/k8s-15.html" class="sidebar-link">Kubernetes搭建高可用集群</a></li><li><a href="/blog/devops/container/k8s/k8s-16.html" class="sidebar-link">Kubernetes容器交付介绍</a></li></ul></section></li><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading"><span>Docker</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/container/docker1.html" class="sidebar-link">Docker基础</a></li><li><a href="/blog/devops/container/docker2.html" class="sidebar-link">Docker进阶</a></li></ul></section></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>日志分析</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/log/elk.html" class="sidebar-link">ELK</a></li><li><a href="/blog/devops/log/splunk.html" class="sidebar-link">Splunk</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>监控</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/devops/monitor/promethus.html" class="sidebar-link">Promethus</a></li><li><a href="/blog/devops/monitor/dynatrace.html" class="sidebar-link">Dynatrace</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="kubernetes集群资源监控"><a href="#kubernetes集群资源监控" class="header-anchor">#</a> Kubernetes集群资源监控</h1> <h2 id="概述"><a href="#概述" class="header-anchor">#</a> 概述</h2> <h3 id="监控指标"><a href="#监控指标" class="header-anchor">#</a> 监控指标</h3> <p>一个好的系统，主要监控以下内容</p> <ul><li>集群监控
+<ul><li>节点资源利用率</li> <li>节点数</li> <li>运行Pods</li></ul></li> <li>Pod监控
+<ul><li>容器指标</li> <li>应用程序【程序占用多少CPU、内存】</li></ul></li></ul> <h3 id="监控平台"><a href="#监控平台" class="header-anchor">#</a> 监控平台</h3> <p>使用普罗米修斯【prometheus】 + Grafana 搭建监控平台</p> <ul><li><p>prometheus【定时搜索被监控服务的状态】</p> <ul><li>开源的</li> <li>监控、报警、数据库</li> <li>以HTTP协议周期性抓取被监控组件状态</li> <li>不需要复杂的集成过程，使用http接口接入即可</li></ul></li> <li><p>Grafana</p> <ul><li>开源的数据分析和可视化工具</li> <li>支持多种数据源</li></ul></li></ul> <p><img src="images/image-20201120082257441.png" alt="image-20201120082257441"></p> <h2 id="部署prometheus"><a href="#部署prometheus" class="header-anchor">#</a> 部署prometheus</h2> <p>首先需要部署一个守护进程</p> <p><img src="images/image-20201120083606298.png" alt="image-20201120083606298"></p> <div class="language-bash extra-class"><pre class="language-bash"><code>---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-exporter
+  namespace: kube-system
+  labels:
+    k8s-app: node-exporter
+spec:
+  selector:
+    matchLabels:
+      k8s-app: node-exporter
+  template:
+    metadata:
+      labels:
+        k8s-app: node-exporter
+    spec:
+      containers:
+      - image: prom/node-exporter
+        name: node-exporter
+        ports:
+        - containerPort: <span class="token number">9100</span>
+          protocol: TCP
+          name: http
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    k8s-app: node-exporter
+  name: node-exporter
+  namespace: kube-system
+spec:
+  ports:
+  - name: http
+    port: <span class="token number">9100</span>
+    nodePort: <span class="token number">31672</span>
+    protocol: TCP
+  type: NodePort
+  selector:
+    k8s-app: node-exporter
+</code></pre></div><p>然后执行下面命令</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl create -f node-exporter.yaml
+</code></pre></div><p>执行完，发现会报错</p> <p><img src="images/image-20201120084034160.png" alt="image-20201120084034160"></p> <p>这是因为版本不一致的问题，因为发布的正式版本，而这个属于测试版本</p> <p>所以我们找到第一行，然后把内容修改为如下所示</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 修改前</span>
+apiVersion: extensions/v1beta1
+<span class="token comment"># 修改后 【正式版本发布后，测试版本不能使用】</span>
+apiVersion: apps/v1
+</code></pre></div><p>创建完成后的效果</p> <p><img src="images/image-20201120085721454.png" alt="image-20201120085721454"></p> <p>然后通过yaml的方式部署prometheus</p> <p><img src="images/image-20201120083107594.png" alt="image-20201120083107594"></p> <ul><li>configmap：定义一个configmap：存储一些配置文件【不加密】</li> <li>prometheus.deploy.yaml：部署一个deployment【包括端口号，资源限制】</li> <li>prometheus.svc.yaml：对外暴露的端口</li> <li>rbac-setup.yaml：分配一些角色的权限</li></ul> <p>下面我们进入目录下，首先部署 rbac-setup.yaml</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl create -f rbac-setup.yaml
+</code></pre></div><p><img src="images/image-20201120090002150.png" alt="image-20201120090002150"></p> <p>然后分别部署</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 部署configmap</span>
+kubectl create -f configmap.yaml
+<span class="token comment"># 部署deployment</span>
+kubectl create -f prometheus.deploy.yml
+<span class="token comment"># 部署svc</span>
+kubectl create -f prometheus.svc.yml
+</code></pre></div><p>部署完成后，我们使用下面命令查看</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get pods -n kube-system
+</code></pre></div><p><img src="images/image-20201120093213576.png" alt="image-20201120093213576"></p> <p>在我们部署完成后，即可看到 prometheus 的 pod了，然后通过下面命令，能够看到对应的端口</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get svc -n kube-system
+</code></pre></div><p><img src="images/image-20201121091348752.png" alt="image-20201121091348752"></p> <p>通过这个，我们可以看到 <code>prometheus</code> 对外暴露的端口为 30003，访问页面即可对应的图形化界面</p> <div class="language-bash extra-class"><pre class="language-bash"><code>http://192.168.177.130:30003
+</code></pre></div><p><img src="images/image-20201121091508851.png" alt="image-20201121091508851"></p> <p>在上面我们部署完prometheus后，我们还需要来部署grafana</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl create -f grafana-deploy.yaml
+</code></pre></div><p>然后执行完后，发现下面的问题</p> <div class="language-bash extra-class"><pre class="language-bash"><code>error: unable to recognize <span class="token string">&quot;grafana-deploy.yaml&quot;</span><span class="token builtin class-name">:</span> no matches <span class="token keyword">for</span> kind <span class="token string">&quot;Deployment&quot;</span> <span class="token keyword">in</span> version <span class="token string">&quot;extensions/v1beta1&quot;</span>
+</code></pre></div><p>我们需要修改如下内容</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 修改</span>
+apiVersion: apps/v1
+
+<span class="token comment"># 添加selector</span>
+spec:
+  replicas: <span class="token number">1</span>
+  selector:
+    matchLabels:
+      app: grafana
+      component: core
+</code></pre></div><p>修改完成后，我们继续执行上述代码</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 创建deployment</span>
+kubectl create -f grafana-deploy.yaml
+<span class="token comment"># 创建svc</span>
+kubectl create -f grafana-svc.yaml
+<span class="token comment"># 创建 ing</span>
+kubectl create -f grafana-ing.yaml
+</code></pre></div><p>我们能看到，我们的grafana正在</p> <p><img src="images/image-20201120110426534.png" alt="image-20201120110426534"></p> <h3 id="配置数据源"><a href="#配置数据源" class="header-anchor">#</a> 配置数据源</h3> <p>下面我们需要开始打开 Grafana，然后配置数据源，导入数据显示模板</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get svc -n kube-system
+</code></pre></div><p><img src="images/image-20201120111949197.png" alt="image-20201120111949197"></p> <p>我们可以通过 ip + 30431 访问我们的 grafana 图形化页面</p> <p><img src="images/image-20201120112048887.png" alt="image-20201120112048887"></p> <p>然后输入账号和密码：admin admin</p> <p>进入后，我们就需要配置 prometheus 的数据源</p> <p><img src="images/image-20201121092012018.png" alt="image-20201121092012018"></p> <p>和 对应的IP【这里IP是我们的ClusterIP】</p> <p><img src="images/image-20201121092053215.png" alt="image-20201121092053215"></p> <h3 id="设置显示数据的模板"><a href="#设置显示数据的模板" class="header-anchor">#</a> 设置显示数据的模板</h3> <p>选择Dashboard，导入我们的模板</p> <p><img src="images/image-20201121092312118.png" alt="image-20201121092312118"></p> <p>然后输入 315 号模板</p> <p><img src="images/image-20201121092418180.png" alt="image-20201121092418180"></p> <p>然后选择 prometheus数据源 mydb，导入即可</p> <p><img src="images/image-20201121092443266.png" alt="image-20201121092443266"></p> <p>导入后的效果如下所示</p> <p><img src="images/image-20201121092610154.png" alt="image-20201121092610154"></p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2/5/2023, 4:38:02 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/devops/container/k8s/k8s-13.html" class="prev">
+        Kubernetes持久化存储
+      </a></span> <span class="next"><a href="/blog/devops/container/k8s/k8s-15.html">
+        Kubernetes搭建高可用集群
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.96a63ad2.js" defer></script><script src="/blog/assets/js/2.e671b9b2.js" defer></script><script src="/blog/assets/js/3.be9bea65.js" defer></script><script src="/blog/assets/js/40.5ef065c5.js" defer></script>
+  </body>
+</html>

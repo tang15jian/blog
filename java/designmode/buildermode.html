@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>建造者模式 | Tang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/TB5.PNG">
+    <meta name="description" content="This is a blog.">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.389ed919.css" as="style"><link rel="preload" href="/blog/assets/js/app.96a63ad2.js" as="script"><link rel="preload" href="/blog/assets/js/2.e671b9b2.js" as="script"><link rel="preload" href="/blog/assets/js/3.be9bea65.js" as="script"><link rel="preload" href="/blog/assets/js/65.cba08f56.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6769ccf0.js"><link rel="prefetch" href="/blog/assets/js/11.46df150a.js"><link rel="prefetch" href="/blog/assets/js/12.e78943d6.js"><link rel="prefetch" href="/blog/assets/js/13.5d361c1d.js"><link rel="prefetch" href="/blog/assets/js/14.13534fd9.js"><link rel="prefetch" href="/blog/assets/js/15.b21fe2e3.js"><link rel="prefetch" href="/blog/assets/js/16.bf5062c1.js"><link rel="prefetch" href="/blog/assets/js/17.65346b85.js"><link rel="prefetch" href="/blog/assets/js/18.6fb1bdc2.js"><link rel="prefetch" href="/blog/assets/js/19.c6e110df.js"><link rel="prefetch" href="/blog/assets/js/20.4a33f06a.js"><link rel="prefetch" href="/blog/assets/js/21.28170e84.js"><link rel="prefetch" href="/blog/assets/js/22.9358a818.js"><link rel="prefetch" href="/blog/assets/js/23.136a0f54.js"><link rel="prefetch" href="/blog/assets/js/24.499aeaaf.js"><link rel="prefetch" href="/blog/assets/js/25.3cff72a1.js"><link rel="prefetch" href="/blog/assets/js/26.4ee8c52f.js"><link rel="prefetch" href="/blog/assets/js/27.6e099c82.js"><link rel="prefetch" href="/blog/assets/js/28.bfc3427b.js"><link rel="prefetch" href="/blog/assets/js/29.ce801df4.js"><link rel="prefetch" href="/blog/assets/js/30.724cfbb6.js"><link rel="prefetch" href="/blog/assets/js/31.ffd0a663.js"><link rel="prefetch" href="/blog/assets/js/32.feba734b.js"><link rel="prefetch" href="/blog/assets/js/33.e8d22227.js"><link rel="prefetch" href="/blog/assets/js/34.a12f435a.js"><link rel="prefetch" href="/blog/assets/js/35.31d4b272.js"><link rel="prefetch" href="/blog/assets/js/36.a6d04eab.js"><link rel="prefetch" href="/blog/assets/js/37.d8aae5c8.js"><link rel="prefetch" href="/blog/assets/js/38.2d9e0b46.js"><link rel="prefetch" href="/blog/assets/js/39.f9bd73de.js"><link rel="prefetch" href="/blog/assets/js/4.850a33ae.js"><link rel="prefetch" href="/blog/assets/js/40.5ef065c5.js"><link rel="prefetch" href="/blog/assets/js/41.014df883.js"><link rel="prefetch" href="/blog/assets/js/42.199ac029.js"><link rel="prefetch" href="/blog/assets/js/43.69e01de9.js"><link rel="prefetch" href="/blog/assets/js/44.b00eed2f.js"><link rel="prefetch" href="/blog/assets/js/45.f676a314.js"><link rel="prefetch" href="/blog/assets/js/46.d76b7b8a.js"><link rel="prefetch" href="/blog/assets/js/47.fa6622ba.js"><link rel="prefetch" href="/blog/assets/js/48.629ae724.js"><link rel="prefetch" href="/blog/assets/js/49.3f36b8cf.js"><link rel="prefetch" href="/blog/assets/js/5.c1ab3a44.js"><link rel="prefetch" href="/blog/assets/js/50.6429bdc0.js"><link rel="prefetch" href="/blog/assets/js/51.b7cb8687.js"><link rel="prefetch" href="/blog/assets/js/52.7360a167.js"><link rel="prefetch" href="/blog/assets/js/53.fb5fcabb.js"><link rel="prefetch" href="/blog/assets/js/54.f5ac5958.js"><link rel="prefetch" href="/blog/assets/js/55.592b0348.js"><link rel="prefetch" href="/blog/assets/js/56.d17f3acb.js"><link rel="prefetch" href="/blog/assets/js/57.11aeb3ed.js"><link rel="prefetch" href="/blog/assets/js/58.1b2f9f8b.js"><link rel="prefetch" href="/blog/assets/js/59.c5633b7a.js"><link rel="prefetch" href="/blog/assets/js/6.0106dfd1.js"><link rel="prefetch" href="/blog/assets/js/60.230b2314.js"><link rel="prefetch" href="/blog/assets/js/61.f9cb1ad6.js"><link rel="prefetch" href="/blog/assets/js/62.92f2597d.js"><link rel="prefetch" href="/blog/assets/js/63.25fe8e93.js"><link rel="prefetch" href="/blog/assets/js/64.08acc4bc.js"><link rel="prefetch" href="/blog/assets/js/66.2aff3910.js"><link rel="prefetch" href="/blog/assets/js/67.23dfb624.js"><link rel="prefetch" href="/blog/assets/js/68.7e1a9696.js"><link rel="prefetch" href="/blog/assets/js/69.127d4ccb.js"><link rel="prefetch" href="/blog/assets/js/7.34cfb431.js"><link rel="prefetch" href="/blog/assets/js/70.cb7a9ca8.js"><link rel="prefetch" href="/blog/assets/js/71.fc5012c0.js"><link rel="prefetch" href="/blog/assets/js/72.04308961.js"><link rel="prefetch" href="/blog/assets/js/73.3b80efd9.js"><link rel="prefetch" href="/blog/assets/js/74.009897a1.js"><link rel="prefetch" href="/blog/assets/js/75.00bb0c95.js"><link rel="prefetch" href="/blog/assets/js/76.0b9619cc.js"><link rel="prefetch" href="/blog/assets/js/77.3cdf8f24.js"><link rel="prefetch" href="/blog/assets/js/78.2db1c727.js"><link rel="prefetch" href="/blog/assets/js/79.342c3faa.js"><link rel="prefetch" href="/blog/assets/js/8.51e80c5b.js"><link rel="prefetch" href="/blog/assets/js/80.0439653b.js"><link rel="prefetch" href="/blog/assets/js/81.6c0e9802.js"><link rel="prefetch" href="/blog/assets/js/82.e6e1608a.js"><link rel="prefetch" href="/blog/assets/js/83.39a82281.js"><link rel="prefetch" href="/blog/assets/js/84.4415141b.js"><link rel="prefetch" href="/blog/assets/js/85.00b63f10.js"><link rel="prefetch" href="/blog/assets/js/86.1581db60.js"><link rel="prefetch" href="/blog/assets/js/87.4c47bbc2.js"><link rel="prefetch" href="/blog/assets/js/88.10af48c1.js"><link rel="prefetch" href="/blog/assets/js/89.84840655.js"><link rel="prefetch" href="/blog/assets/js/9.c76e1545.js"><link rel="prefetch" href="/blog/assets/js/90.574990da.js"><link rel="prefetch" href="/blog/assets/js/91.a1094788.js"><link rel="prefetch" href="/blog/assets/js/92.7070acb6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.389ed919.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/TB5.PNG" alt="Tang's Blog" class="logo"> <span class="site-name can-hide">Tang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link router-link-active">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link router-link-active">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>新版本</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/java/newfeature/" class="sidebar-link">版本概览</a></li><li><a href="/blog/java/newfeature/java8.html" class="sidebar-link">Java 8</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>设计模式</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/java/designmode/" aria-current="page" class="sidebar-link">什么是设计模式</a></li><li><a href="/blog/java/designmode/singleton.html" class="sidebar-link">单例模式</a></li><li><a href="/blog/java/designmode/factory.html" class="sidebar-link">工厂模式</a></li><li><a href="/blog/java/designmode/buildermode.html" aria-current="page" class="active sidebar-link">建造者模式</a></li><li><a href="/blog/java/designmode/prototypemode.html" class="sidebar-link">原型模式</a></li><li><a href="/blog/java/designmode/adaptermode.html" class="sidebar-link">适配器模式</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>多线程</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/java/multithread/" class="sidebar-link">一级标题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JUC</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/java/juc/" class="sidebar-link">一级标题</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JVM</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/java/jvm/" class="sidebar-link">双亲委派机制</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Spring</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><section class="sidebar-group is-sub-group depth-1"><p class="sidebar-heading open"><span>Spring</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/java/spring/spring/AOP1.html" class="sidebar-link">AOP</a></li></ul></section></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="建造者模式"><a href="#建造者模式" class="header-anchor">#</a> 建造者模式</h1> <p>建造者模式也属于创建型模式，它提供了一种创建对象的最佳方式。在用户不知道对象的建造过程和细节的情况下就可以直接创建复杂对象。由Director指挥Builder完成对象创建。</p> <p><img src="/blog/designmode/buildermode.PNG" alt="建造者模式"></p> <p>Product: 最终要生成的对象，例如这里的房子实例。</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token comment">//Product.java</span>
+    <span class="token keyword">package</span> <span class="token namespace">factory<span class="token punctuation">.</span>builder</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//产品：房子</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Product</span> <span class="token punctuation">{</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> buildA<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> buildB<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> buildC<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> <span class="token class-name">String</span> buildD<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBuildA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> buildA<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBuildA</span><span class="token punctuation">(</span><span class="token class-name">String</span> buildA<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>buildA <span class="token operator">=</span> buildA<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBuildB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> buildB<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBuildB</span><span class="token punctuation">(</span><span class="token class-name">String</span> buildB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>buildB <span class="token operator">=</span> buildB<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBuildC</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> buildC<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBuildC</span><span class="token punctuation">(</span><span class="token class-name">String</span> buildC<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>buildC <span class="token operator">=</span> buildC<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">getBuildD</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> buildD<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setBuildD</span><span class="token punctuation">(</span><span class="token class-name">String</span> buildD<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>buildD <span class="token operator">=</span> buildD<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">public</span> <span class="token class-name">String</span> <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token string">&quot;Product{&quot;</span> <span class="token operator">+</span>
+                    <span class="token string">&quot;buildA='&quot;</span> <span class="token operator">+</span> buildA <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                    <span class="token string">&quot;, buildB='&quot;</span> <span class="token operator">+</span> buildB <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                    <span class="token string">&quot;, buildC='&quot;</span> <span class="token operator">+</span> buildC <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                    <span class="token string">&quot;, buildD='&quot;</span> <span class="token operator">+</span> buildD <span class="token operator">+</span> <span class="token string">'\''</span> <span class="token operator">+</span>
+                    <span class="token string">'}'</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+
+</code></pre></div><p>Builder： 构建者的抽象基类（有时会使用接口代替）。其定义了构建Product的抽象步骤，其实体类需要实现这些步骤。其会包含一个用来返回最终产品的方法Product getProduct()</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token comment">//Builder.java</span>
+    <span class="token keyword">package</span> <span class="token namespace">factory<span class="token punctuation">.</span>builder</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//抽象的建造者</span>
+    <span class="token keyword">public</span> <span class="token keyword">abstract</span> <span class="token keyword">class</span> <span class="token class-name">Builder</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">buildA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//地基</span>
+        <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">buildB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//钢筋工程</span>
+        <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">buildC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//铺电线</span>
+        <span class="token keyword">abstract</span> <span class="token keyword">void</span> <span class="token function">buildD</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//粉饰</span>
+
+        <span class="token keyword">abstract</span> <span class="token class-name">Product</span> <span class="token function">getProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token punctuation">}</span>
+
+</code></pre></div><p>Worker: Builder的实现类。</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token comment">//Worker.java</span>
+    <span class="token keyword">package</span> <span class="token namespace">factory<span class="token punctuation">.</span>builder</span><span class="token punctuation">;</span>
+    <span class="token comment">//具体的建造者：工人</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Worker</span> <span class="token keyword">extends</span> <span class="token class-name">Builder</span><span class="token punctuation">{</span>
+
+        <span class="token keyword">private</span> <span class="token class-name">Product</span> product<span class="token punctuation">;</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            product <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">void</span> <span class="token function">buildA</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            product<span class="token punctuation">.</span><span class="token function">setBuildA</span><span class="token punctuation">(</span><span class="token string">&quot;地基&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;地基&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">void</span> <span class="token function">buildB</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            product<span class="token punctuation">.</span><span class="token function">setBuildB</span><span class="token punctuation">(</span><span class="token string">&quot;钢筋工程&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;钢筋工程&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">void</span> <span class="token function">buildC</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            product<span class="token punctuation">.</span><span class="token function">setBuildC</span><span class="token punctuation">(</span><span class="token string">&quot;铺电线&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;铺电线&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token keyword">void</span> <span class="token function">buildD</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            product<span class="token punctuation">.</span><span class="token function">setBuildD</span><span class="token punctuation">(</span><span class="token string">&quot;粉刷&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;粉刷&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token annotation punctuation">@Override</span>
+        <span class="token class-name">Product</span> <span class="token function">getProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> product<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+</code></pre></div><p>Director: 决定如何构建最终产品的算法. 其会包含一个负责组装的方法build(Builder builder)， 在这个方法中通过调用builder的方法，就可以设置builder，等设置完成后，就可以通过builder的 getProduct() 方法获得最终的产品。
+Director类中还可以改变builder的建造顺序</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token comment">//Director.java</span>
+    <span class="token keyword">package</span> <span class="token namespace">factory<span class="token punctuation">.</span>builder</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//指挥：负责指挥构建一个工程</span>
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Director</span> <span class="token punctuation">{</span>
+
+        <span class="token keyword">public</span> <span class="token class-name">Product</span> <span class="token function">build</span><span class="token punctuation">(</span><span class="token class-name">Builder</span> builder<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            builder<span class="token punctuation">.</span><span class="token function">buildA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            builder<span class="token punctuation">.</span><span class="token function">buildB</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            builder<span class="token punctuation">.</span><span class="token function">buildC</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            builder<span class="token punctuation">.</span><span class="token function">buildD</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> builder<span class="token punctuation">.</span><span class="token function">getProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+</code></pre></div><p>最后在Test类中使用director.build()方法完成构造</p> <div class="language-java extra-class"><pre class="language-java"><code>    <span class="token comment">//Test.java</span>
+    <span class="token keyword">package</span> <span class="token namespace">factory<span class="token punctuation">.</span>builder</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token punctuation">{</span>
+        <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">Director</span> director <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Director</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">Product</span> product <span class="token operator">=</span> director<span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Worker</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>product<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+</code></pre></div><ul><li>优点
+<ul><li>产品的建造和表时分离，实现了解耦，使创建过程更加清晰</li> <li>具体的建造者类之间使相互独立的，这有利于系统的扩展。（增加新的具体建造者无需修改原有类库的代码，符合开闭原则）</li></ul></li> <li>缺点
+<ul><li>建造者模式所创建的产品一般具有较多相同点，其组成部分相似（例如造房子需要相同的材料、工序等）</li> <li>如果产品内部变化复杂，可能会需要定义很多具体建造者类来实现这种变化，造成系统冗余</li></ul></li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">4/14/2022, 6:13:37 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/java/designmode/factory.html" class="prev">
+        工厂模式
+      </a></span> <span class="next"><a href="/blog/java/designmode/prototypemode.html">
+        原型模式
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.96a63ad2.js" defer></script><script src="/blog/assets/js/2.e671b9b2.js" defer></script><script src="/blog/assets/js/3.be9bea65.js" defer></script><script src="/blog/assets/js/65.cba08f56.js" defer></script>
+  </body>
+</html>

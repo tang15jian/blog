@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Go中的包 | Tang&#39;s Blog</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/TB5.PNG">
+    <meta name="description" content="This is a blog.">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.389ed919.css" as="style"><link rel="preload" href="/blog/assets/js/app.96a63ad2.js" as="script"><link rel="preload" href="/blog/assets/js/2.e671b9b2.js" as="script"><link rel="preload" href="/blog/assets/js/3.be9bea65.js" as="script"><link rel="preload" href="/blog/assets/js/85.00b63f10.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.6769ccf0.js"><link rel="prefetch" href="/blog/assets/js/11.46df150a.js"><link rel="prefetch" href="/blog/assets/js/12.e78943d6.js"><link rel="prefetch" href="/blog/assets/js/13.5d361c1d.js"><link rel="prefetch" href="/blog/assets/js/14.13534fd9.js"><link rel="prefetch" href="/blog/assets/js/15.b21fe2e3.js"><link rel="prefetch" href="/blog/assets/js/16.bf5062c1.js"><link rel="prefetch" href="/blog/assets/js/17.65346b85.js"><link rel="prefetch" href="/blog/assets/js/18.6fb1bdc2.js"><link rel="prefetch" href="/blog/assets/js/19.c6e110df.js"><link rel="prefetch" href="/blog/assets/js/20.4a33f06a.js"><link rel="prefetch" href="/blog/assets/js/21.28170e84.js"><link rel="prefetch" href="/blog/assets/js/22.9358a818.js"><link rel="prefetch" href="/blog/assets/js/23.136a0f54.js"><link rel="prefetch" href="/blog/assets/js/24.499aeaaf.js"><link rel="prefetch" href="/blog/assets/js/25.3cff72a1.js"><link rel="prefetch" href="/blog/assets/js/26.4ee8c52f.js"><link rel="prefetch" href="/blog/assets/js/27.6e099c82.js"><link rel="prefetch" href="/blog/assets/js/28.bfc3427b.js"><link rel="prefetch" href="/blog/assets/js/29.ce801df4.js"><link rel="prefetch" href="/blog/assets/js/30.724cfbb6.js"><link rel="prefetch" href="/blog/assets/js/31.ffd0a663.js"><link rel="prefetch" href="/blog/assets/js/32.feba734b.js"><link rel="prefetch" href="/blog/assets/js/33.e8d22227.js"><link rel="prefetch" href="/blog/assets/js/34.a12f435a.js"><link rel="prefetch" href="/blog/assets/js/35.31d4b272.js"><link rel="prefetch" href="/blog/assets/js/36.a6d04eab.js"><link rel="prefetch" href="/blog/assets/js/37.d8aae5c8.js"><link rel="prefetch" href="/blog/assets/js/38.2d9e0b46.js"><link rel="prefetch" href="/blog/assets/js/39.f9bd73de.js"><link rel="prefetch" href="/blog/assets/js/4.850a33ae.js"><link rel="prefetch" href="/blog/assets/js/40.5ef065c5.js"><link rel="prefetch" href="/blog/assets/js/41.014df883.js"><link rel="prefetch" href="/blog/assets/js/42.199ac029.js"><link rel="prefetch" href="/blog/assets/js/43.69e01de9.js"><link rel="prefetch" href="/blog/assets/js/44.b00eed2f.js"><link rel="prefetch" href="/blog/assets/js/45.f676a314.js"><link rel="prefetch" href="/blog/assets/js/46.d76b7b8a.js"><link rel="prefetch" href="/blog/assets/js/47.fa6622ba.js"><link rel="prefetch" href="/blog/assets/js/48.629ae724.js"><link rel="prefetch" href="/blog/assets/js/49.3f36b8cf.js"><link rel="prefetch" href="/blog/assets/js/5.c1ab3a44.js"><link rel="prefetch" href="/blog/assets/js/50.6429bdc0.js"><link rel="prefetch" href="/blog/assets/js/51.b7cb8687.js"><link rel="prefetch" href="/blog/assets/js/52.7360a167.js"><link rel="prefetch" href="/blog/assets/js/53.fb5fcabb.js"><link rel="prefetch" href="/blog/assets/js/54.f5ac5958.js"><link rel="prefetch" href="/blog/assets/js/55.592b0348.js"><link rel="prefetch" href="/blog/assets/js/56.d17f3acb.js"><link rel="prefetch" href="/blog/assets/js/57.11aeb3ed.js"><link rel="prefetch" href="/blog/assets/js/58.1b2f9f8b.js"><link rel="prefetch" href="/blog/assets/js/59.c5633b7a.js"><link rel="prefetch" href="/blog/assets/js/6.0106dfd1.js"><link rel="prefetch" href="/blog/assets/js/60.230b2314.js"><link rel="prefetch" href="/blog/assets/js/61.f9cb1ad6.js"><link rel="prefetch" href="/blog/assets/js/62.92f2597d.js"><link rel="prefetch" href="/blog/assets/js/63.25fe8e93.js"><link rel="prefetch" href="/blog/assets/js/64.08acc4bc.js"><link rel="prefetch" href="/blog/assets/js/65.cba08f56.js"><link rel="prefetch" href="/blog/assets/js/66.2aff3910.js"><link rel="prefetch" href="/blog/assets/js/67.23dfb624.js"><link rel="prefetch" href="/blog/assets/js/68.7e1a9696.js"><link rel="prefetch" href="/blog/assets/js/69.127d4ccb.js"><link rel="prefetch" href="/blog/assets/js/7.34cfb431.js"><link rel="prefetch" href="/blog/assets/js/70.cb7a9ca8.js"><link rel="prefetch" href="/blog/assets/js/71.fc5012c0.js"><link rel="prefetch" href="/blog/assets/js/72.04308961.js"><link rel="prefetch" href="/blog/assets/js/73.3b80efd9.js"><link rel="prefetch" href="/blog/assets/js/74.009897a1.js"><link rel="prefetch" href="/blog/assets/js/75.00bb0c95.js"><link rel="prefetch" href="/blog/assets/js/76.0b9619cc.js"><link rel="prefetch" href="/blog/assets/js/77.3cdf8f24.js"><link rel="prefetch" href="/blog/assets/js/78.2db1c727.js"><link rel="prefetch" href="/blog/assets/js/79.342c3faa.js"><link rel="prefetch" href="/blog/assets/js/8.51e80c5b.js"><link rel="prefetch" href="/blog/assets/js/80.0439653b.js"><link rel="prefetch" href="/blog/assets/js/81.6c0e9802.js"><link rel="prefetch" href="/blog/assets/js/82.e6e1608a.js"><link rel="prefetch" href="/blog/assets/js/83.39a82281.js"><link rel="prefetch" href="/blog/assets/js/84.4415141b.js"><link rel="prefetch" href="/blog/assets/js/86.1581db60.js"><link rel="prefetch" href="/blog/assets/js/87.4c47bbc2.js"><link rel="prefetch" href="/blog/assets/js/88.10af48c1.js"><link rel="prefetch" href="/blog/assets/js/89.84840655.js"><link rel="prefetch" href="/blog/assets/js/9.c76e1545.js"><link rel="prefetch" href="/blog/assets/js/90.574990da.js"><link rel="prefetch" href="/blog/assets/js/91.a1094788.js"><link rel="prefetch" href="/blog/assets/js/92.7070acb6.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.389ed919.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/" class="home-link router-link-active"><img src="/blog/TB5.PNG" alt="Tang's Blog" class="logo"> <span class="site-name can-hide">Tang's Blog</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link router-link-active">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术笔记" class="dropdown-title"><span class="title">技术笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="技术笔记" class="mobile-dropdown-title"><span class="title">技术笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/java/" class="nav-link">
+  Java
+</a></li><li class="dropdown-item"><!----> <a href="/blog/frontend/" class="nav-link">
+  前端
+</a></li><li class="dropdown-item"><!----> <a href="/blog/db/" class="nav-link">
+  DB
+</a></li><li class="dropdown-item"><!----> <a href="/blog/microservice/" class="nav-link">
+  微服务
+</a></li><li class="dropdown-item"><!----> <a href="/blog/distribution/" class="nav-link">
+  分布式
+</a></li><li class="dropdown-item"><!----> <a href="/blog/bigdata/" class="nav-link">
+  大数据
+</a></li><li class="dropdown-item"><!----> <a href="/blog/devops/" class="nav-link">
+  DevOps
+</a></li><li class="dropdown-item"><!----> <a href="/blog/newlanguage/" class="nav-link router-link-active">
+  新语言
+</a></li><li class="dropdown-item"><!----> <a href="/blog/othertool/" class="nav-link">
+  其他工具
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="其他" class="dropdown-title"><span class="title">其他</span> <span class="arrow down"></span></button> <button type="button" aria-label="其他" class="mobile-dropdown-title"><span class="title">其他</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/readbook/" class="nav-link">
+  读书分享
+</a></li><li class="dropdown-item"><!----> <a href="/blog/guitar/" class="nav-link">
+  吉他谱
+</a></li><li class="dropdown-item"><!----> <a href="/blog/food/" class="nav-link">
+  饮食
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Go Lang</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/blog/newlanguage/go/go1.html" class="sidebar-link">Go语言简介</a></li><li><a href="/blog/newlanguage/go/go2.html" class="sidebar-link">数据类型</a></li><li><a href="/blog/newlanguage/go/go3.html" class="sidebar-link">其他类型</a></li><li><a href="/blog/newlanguage/go/go4.html" class="sidebar-link">Go 流程控制</a></li><li><a href="/blog/newlanguage/go/go5.html" aria-current="page" class="active sidebar-link">Go中的包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#go中的包的介绍和定义" class="sidebar-link">Go中的包的介绍和定义</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#go包管理工具-go-mod" class="sidebar-link">Go包管理工具 go mod</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#go-mod-init初始化项目" class="sidebar-link">go mod init初始化项目</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#引入其它项目的包" class="sidebar-link">引入其它项目的包</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#golang中自定义包" class="sidebar-link">Golang中自定义包</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#go中init-初始化函数" class="sidebar-link">Go中init()初始化函数</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#init函数介绍" class="sidebar-link">init函数介绍</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#init函数执行顺序" class="sidebar-link">init函数执行顺序</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#go中的第三方包" class="sidebar-link">Go中的第三方包</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#方法1-go-get-包全名-全局" class="sidebar-link">方法1：go get 包全名 （全局）</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#方法2-go-mod-download-全局" class="sidebar-link">方法2：go mod download （全局）</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#方法3-go-mod-vendor-将依赖复制到当前项目的vendor-本项目" class="sidebar-link">方法3：go mod vendor 将依赖复制到当前项目的vendor（本项目）</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#go-mod常见命令" class="sidebar-link">go mod常见命令</a></li></ul></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#安装依赖" class="sidebar-link">安装依赖</a></li><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#完整案例" class="sidebar-link">完整案例</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/blog/newlanguage/go/go5.html#寻找依赖" class="sidebar-link">寻找依赖</a></li></ul></li></ul></li><li><a href="/blog/newlanguage/go/go6.html" class="sidebar-link">Go中的日期函数</a></li><li><a href="/blog/newlanguage/go/go7.html" class="sidebar-link">Go中的文件和目录操作</a></li><li><a href="/blog/newlanguage/go/go8.html" class="sidebar-link">Golang goroutine channel 实现并发和并行</a></li><li><a href="/blog/newlanguage/go/go9.html" class="sidebar-link">Go中的反射</a></li><li><a href="/blog/newlanguage/go/go10.html" class="sidebar-link">互联网协议</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="go中的包"><a href="#go中的包" class="header-anchor">#</a> Go中的包</h1> <h2 id="go中的包的介绍和定义"><a href="#go中的包的介绍和定义" class="header-anchor">#</a> Go中的包的介绍和定义</h2> <p>包（package）是多个Go源码的集合，是一种高级的代码复用方案，Go语言为我们提供了很多内置包，如fmt、strconv、strings、sort、errors、time、encoding/json、os、io等。</p> <p>Golang中的包可以分为三种：1、系统内置包   2、自定义包   3、第三方包</p> <ul><li><strong>系统内置包</strong>：Golang 语言给我们提供的内置包，引入后可以直接使用，如fmt、strconv、strings、sort、errors、time、encoding/json、os、io等。</li> <li><strong>自定义包</strong>：开发者自己写的包</li> <li><strong>第三方包</strong>：属于自定义包的一种，需要下载安装到本地后才可以使用，如前面给大家介绍的
+&quot;github.com/shopspring/decimal&quot;包解决float精度丢失问题。</li></ul> <h2 id="go包管理工具-go-mod"><a href="#go包管理工具-go-mod" class="header-anchor">#</a> Go包管理工具 go mod</h2> <p>在Golang1.11版本之前如果我们要自定义包的话必须把项目放在GOPATH目录。Go1.11版本之后无需手动配置环境变量，使用go mod 管理项目，也不需要非得把项目放到GOPATH指定目录下，你可以在你磁盘的任何位置新建一个项目，Go1.13以后可以彻底不要GOPATH了。</p> <h3 id="go-mod-init初始化项目"><a href="#go-mod-init初始化项目" class="header-anchor">#</a> go mod init初始化项目</h3> <p>实际项目开发中我们首先要在我们项目目录中用go mod命令生成一个go.mod文件管理我们项目的依赖。</p> <p>比如我们的golang项目文件要放在了itying这个文件夹，这个时候我们需要在itying文件夹里面使用go mod命令生成一个go.mod文件</p> <div class="language- extra-class"><pre class="language-text"><code>go mod init goProject
+</code></pre></div><p><img src="images/image-20200722160717988.png" alt="image-20200722160717988"></p> <p>然后会生成一个 go.mod 的文件，里面的内容是go版本，以及以后添加的包</p> <div class="language-go extra-class"><pre class="language-go"><code>module goProject
+
+<span class="token keyword">go</span> <span class="token number">1.14</span>
+</code></pre></div><h3 id="引入其它项目的包"><a href="#引入其它项目的包" class="header-anchor">#</a> 引入其它项目的包</h3> <p>首先我们创建一个 calc，然后里面有一个calc的文件</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> calc
+
+<span class="token comment">// 自定义包，最好和文件夹统一起来</span>
+
+<span class="token comment">// 公有变量</span>
+<span class="token keyword">var</span> age <span class="token operator">=</span> <span class="token number">10</span>
+<span class="token comment">// 私有变量</span>
+<span class="token keyword">var</span> Name <span class="token operator">=</span> <span class="token string">&quot;张三&quot;</span>
+
+<span class="token comment">// 首字母大写，表示共有方法</span>
+<span class="token keyword">func</span> <span class="token function">Add</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token builtin">int</span>  <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> x <span class="token operator">+</span> y
+<span class="token punctuation">}</span>
+<span class="token keyword">func</span> <span class="token function">Sub</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y <span class="token builtin">int</span><span class="token punctuation">)</span><span class="token builtin">int</span>  <span class="token punctuation">{</span>
+	<span class="token keyword">return</span> x <span class="token operator">-</span> y
+<span class="token punctuation">}</span>
+</code></pre></div><p>在其它地方需要引用的话，就是这样</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;goProject/calc&quot;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v&quot;</span><span class="token punctuation">,</span> calc<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="golang中自定义包"><a href="#golang中自定义包" class="header-anchor">#</a> Golang中自定义包</h2> <p>包（package）是多个Go源码的集合，一个包可以简单理解为一个存放多个.go文件的文件夹。该文件夹下面的所有go文件都要在代码的第一行添加如下代码，声明该文件归属的包。</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> 包名
+</code></pre></div><p><strong>注意事项</strong></p> <ul><li>一个文件夹下面直接包含的文件只能归属一个package，同样一个package的文件不能在多个文件夹下。</li> <li>包名可以不和文件夹的名字一样，包名不能包含-符号。</li> <li>包名为main的包为应用程序的入口包，这种包编译后会得到一个可执行文件，而编译不包含main包的源代码则不会得到可执行文件。</li></ul> <h2 id="go中init-初始化函数"><a href="#go中init-初始化函数" class="header-anchor">#</a> Go中init()初始化函数</h2> <h3 id="init函数介绍"><a href="#init函数介绍" class="header-anchor">#</a> init函数介绍</h3> <p>在Go 语言程序执行时导入包语句会自动触发包内部init（）函数的调用。需要注意的是：init（）
+函数没有参数也没有返回值。init（）函数在程序运行时自动被调用执行，不能在代码中主动调用它。
+包初始化执行的顺序如下图所示：</p> <p>包初始化执行的顺序如下图所示：</p> <p><img src="images/image-20200722192813667.png" alt="image-20200722192813667"></p> <h3 id="init函数执行顺序"><a href="#init函数执行顺序" class="header-anchor">#</a> init函数执行顺序</h3> <p>Go语言包会从main包开始检查其导入的所有包，每个包中又可能导入了其他的包。Go编译器由此构建出一个树状的包引用关系，再根据引用顺序决定编译顺序，依次编译这些包的代码。</p> <p>在运行时，被最后导入的包会最先初始化并调用其init（）函数，如下图示：</p> <p><img src="images/image-20200722192933448.png" alt="image-20200722192933448"></p> <p>也就是父类中的init先执行</p> <h2 id="go中的第三方包"><a href="#go中的第三方包" class="header-anchor">#</a> Go中的第三方包</h2> <p>我们可以在 https://pkg.go.dev/ 查找看常见的golang第三方包</p> <p>例如，前面找到前面我们需要下载的第三方包的地址</p> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/shopspring/decimal
+</code></pre></div><p>然后安装这个包</p> <h3 id="方法1-go-get-包全名-全局"><a href="#方法1-go-get-包全名-全局" class="header-anchor">#</a> 方法1：go get 包全名 （全局）</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>go get github.com/shopspring/decimal
+</code></pre></div><h3 id="方法2-go-mod-download-全局"><a href="#方法2-go-mod-download-全局" class="header-anchor">#</a> 方法2：go mod download （全局）</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>go mod download
+</code></pre></div><p>依赖包会自动下载到 $GOPATH/pkg/mod目录，并且多个项目可以共享缓存的mod，注意使用go mod download的时候，需要首先在你的项目中引入第三方包</p> <h3 id="方法3-go-mod-vendor-将依赖复制到当前项目的vendor-本项目"><a href="#方法3-go-mod-vendor-将依赖复制到当前项目的vendor-本项目" class="header-anchor">#</a> 方法3：go mod vendor 将依赖复制到当前项目的vendor（本项目）</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>go mod vendor
+</code></pre></div><p>将依赖复制到当前项目的vendor下</p> <p>注意：使用go mod vendor的时候，首先需要在你的项目里面引入第三方包</p> <h3 id="go-mod常见命令"><a href="#go-mod常见命令" class="header-anchor">#</a> go mod常见命令</h3> <ul><li>go download：下载依赖的module到本地cache</li> <li>go edit：编辑go.mod文件</li> <li>go graph：打印模块依赖图</li> <li>go init：在当前文件夹下初始化一个新的module，创建go.mod文件</li> <li>tidy：增加丢失的module，去掉未使用的module</li> <li>vendor：将依赖复制到vendor下</li> <li>verify：校验依赖，检查下载的第三方库有没有本地修改，如果有修改，则会返回非0，否则校验成功</li></ul> <h2 id="安装依赖"><a href="#安装依赖" class="header-anchor">#</a> 安装依赖</h2> <p>首先我们先去官网找到这个包，https://github.com/shopspring/decimal</p> <p>然后在我们的项目中引入</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/shopspring/decimal&quot;</span>
+	<span class="token string">&quot;goProject/calc&quot;</span>
+<span class="token punctuation">)</span>
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Printf</span><span class="token punctuation">(</span><span class="token string">&quot;%v \n&quot;</span><span class="token punctuation">,</span> calc<span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token comment">// 打印公有变量</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>calc<span class="token punctuation">.</span>Name<span class="token punctuation">)</span>
+
+	<span class="token boolean">_</span><span class="token punctuation">,</span> err <span class="token operator">:=</span> decimal<span class="token punctuation">.</span><span class="token function">NewFromString</span><span class="token punctuation">(</span><span class="token string">&quot;136.02&quot;</span><span class="token punctuation">)</span>
+	<span class="token keyword">if</span> err <span class="token operator">!=</span> <span class="token boolean">nil</span> <span class="token punctuation">{</span>
+		<span class="token function">panic</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>引入后，我们运行项目，就会去下载了，下载完成后，我们到  go.mod文件夹，能够看到依赖被引入了</p> <div class="language-go extra-class"><pre class="language-go"><code>module goProject
+
+<span class="token keyword">go</span> <span class="token number">1.14</span>
+
+require github<span class="token punctuation">.</span>com<span class="token operator">/</span>shopspring<span class="token operator">/</span>decimal v1<span class="token punctuation">.</span><span class="token number">2.0</span> <span class="token comment">// indirect</span>
+</code></pre></div><p>同时还生成了一个 go.sum文件</p> <div class="language-go extra-class"><pre class="language-go"><code>github<span class="token punctuation">.</span>com<span class="token operator">/</span>shopspring<span class="token operator">/</span>decimal v1<span class="token punctuation">.</span><span class="token number">2.0</span> h1<span class="token punctuation">:</span>abSATXmQEYyShuxI4<span class="token operator">/</span>vyW3tV1MrKAJzCZ<span class="token operator">/</span><span class="token number">0</span>zLUXYbsQ<span class="token operator">=</span>
+github<span class="token punctuation">.</span>com<span class="token operator">/</span>shopspring<span class="token operator">/</span>decimal v1<span class="token punctuation">.</span><span class="token number">2.0</span><span class="token operator">/</span><span class="token keyword">go</span><span class="token punctuation">.</span>mod h1<span class="token punctuation">:</span>DKyhrW<span class="token operator">/</span>HYNuLGql<span class="token operator">+</span>MJL6WCR6knT2jwCFRcu2hWCYk4o<span class="token operator">=</span>
+</code></pre></div><p>这样我们就可以使用第三包开始具体的使用了~，我们实现一个Float类型的加法</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+	<span class="token string">&quot;fmt&quot;</span>
+	<span class="token string">&quot;github.com/shopspring/decimal&quot;</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	<span class="token keyword">var</span> num1 <span class="token builtin">float64</span> <span class="token operator">=</span> <span class="token number">3.1</span>
+	<span class="token keyword">var</span> num2 <span class="token builtin">float64</span> <span class="token operator">=</span> <span class="token number">4.2</span>
+	d1 <span class="token operator">:=</span> decimal<span class="token punctuation">.</span><span class="token function">NewFromFloat</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">Add</span><span class="token punctuation">(</span>decimal<span class="token punctuation">.</span><span class="token function">NewFromFloat</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	fmt<span class="token punctuation">.</span><span class="token function">Println</span><span class="token punctuation">(</span>d1<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="完整案例"><a href="#完整案例" class="header-anchor">#</a> 完整案例</h2> <h3 id="寻找依赖"><a href="#寻找依赖" class="header-anchor">#</a> 寻找依赖</h3> <p>首先我们需要去 <a href="https://pkg.go.dev/" target="_blank" rel="noopener noreferrer">依赖官网<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，类似于我们的  maven repository</p> <p><img src="images/image-20200722200404713.png" alt="image-20200722200404713"></p> <p>然后我们搜索gJson的包，这个包主要是用于json相关的操作</p> <p><img src="images/image-20200722200455221.png" alt="image-20200722200455221"></p> <p>我们进去后，找到它的https://github.com/tidwall/gjson，然后提供了完整的教程</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 下载依赖</span>
+go get -u github.com/tidwall/gjson
+</code></pre></div><p>使用</p> <div class="language-go extra-class"><pre class="language-go"><code><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token string">&quot;github.com/tidwall/gjson&quot;</span>
+
+<span class="token keyword">const</span> json <span class="token operator">=</span> <span class="token string">`{&quot;name&quot;:{&quot;first&quot;:&quot;Janet&quot;,&quot;last&quot;:&quot;Prichard&quot;},&quot;age&quot;:47}`</span>
+
+<span class="token keyword">func</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+	value <span class="token operator">:=</span> gjson<span class="token punctuation">.</span><span class="token function">Get</span><span class="token punctuation">(</span>json<span class="token punctuation">,</span> <span class="token string">&quot;name.last&quot;</span><span class="token punctuation">)</span>
+	<span class="token function">println</span><span class="token punctuation">(</span>value<span class="token punctuation">.</span><span class="token function">String</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+</code></pre></div></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/blog/newlanguage/go/go4.html" class="prev">
+        Go 流程控制
+      </a></span> <span class="next"><a href="/blog/newlanguage/go/go6.html">
+        Go中的日期函数
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/blog/assets/js/app.96a63ad2.js" defer></script><script src="/blog/assets/js/2.e671b9b2.js" defer></script><script src="/blog/assets/js/3.be9bea65.js" defer></script><script src="/blog/assets/js/85.00b63f10.js" defer></script>
+  </body>
+</html>
